@@ -44,17 +44,14 @@
 .qa-a-item-content pre,
 .wmd-preview pre {
 	overflow: auto;
-/*
-	max-height: 400px;
-*/
 	max-height: 35em;
 	margin: 0 0 0.5em;
 	padding: 2px 4px;
 	border: 0;
 	background-color: #f0f0f0;
 	font-family: "Liberation Mono", "Courier New", Courier, monospace;
-  scrollbar-width: thin;
-  scrollbar-color: #808080 #c0c0c0;
+	scrollbar-width: thin;
+	scrollbar-color: #808080 #c0c0c0;
 }
 
 pre code {display: block; margin: 0; padding: 0; border: 0;}
@@ -156,14 +153,14 @@ p {
 blockquote {
 	margin: 0;
 	padding: 3px 6px;
-  margin-bottom: 1.3em;
+	margin-bottom: 1.3em;
 	background-color: #f0f0f0;
 	border-left: 3px solid #c0c0c0;
 	font-family: "Georgia", "Times New Roman", "Times", serif;
 	font-style: italic;
 }
 blockquote code {
-  background-color: #c0c0c0;
+	background-color: #c0c0c0;
 }
 
 table {
@@ -172,11 +169,11 @@ table {
 }
 
 hr {
-  margin: 0.7em 0 0.7em 0;
-  border: 0;
-  height: 1px;
-  color: #c0c0c0;
-  background-color: #c0c0c0;
+	margin: 0.7em 0 0.7em 0;
+	border: 0;
+	height: 1px;
+	color: #c0c0c0;
+	background-color: #c0c0c0;
 }
 
 /* uncomment this if you want autofill background color disabled */
@@ -188,17 +185,6 @@ input {
 
 .qa-post-content p,
 .qa-post-content pre {margin-bottom: 1.3em;}
-/*
-.qa-post-content blockquote {
-	margin: 0;
-	padding: 3px 6px;
-  margin-bottom: 1.3em;
-	background-color: #f0f0f0;
-	border-left: 3px solid #c0c0c0;
-	font-family: "Georgia", "Times New Roman", "Times", serif;
-	font-style: italic;
-}
-*/
 .qa-post-content blockquote p {margin: 0; padding: 0;}
 .qa-post-content li p {margin: 0; padding: 0;}
 
@@ -300,7 +286,6 @@ h2, h3, h4, h5, h6 {
 	cursor: pointer;
 }
 
-
 .qa-error {
 	background-color: #ffeeee;
 	border: 1px solid #cc0000;
@@ -329,14 +314,14 @@ h2, h3, h4, h5, h6 {
 	border: 1px solid #c0c0c0;
 }
 .qa-sidebar > h2 {
-  margin: 0;
-  padding: 0;
-  font-size: 16px;
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
 }
 .qa-sidebar > p {
-  margin: 8px 0 0 0;
-  padding: 0;
-  font-size: 12px;
+	margin: 8px 0 0 0;
+	padding: 0;
+	font-size: 12px;
 }
 
 .qa-feed {
@@ -385,9 +370,6 @@ h2, h3, h4, h5, h6 {
 /* popular tags in sidebar widget */
 .qa-widget-side > div > a {
 	padding: 0 0.2em 0.1em 0.2em;
-/*
-	line-height: 1.6em;
-*/
 	line-height: calc(1.4em + 5px);
 	background-color: #e0e0e0;
 	color: #808080;
@@ -904,7 +886,7 @@ h2, h3, h4, h5, h6 {
 .qa-top-users-score {
 	padding: 5px 8px;
 	border: 1px solid #c0c0c0;
-  line-height: 30px;
+	line-height: 30px;
 }
 .qa-top-users-label {text-align: left; font-weight: bold;}
 .qa-top-users-score {
@@ -1012,12 +994,9 @@ h2, h3, h4, h5, h6 {
 	float: right;
 	width: 48px;
 	text-align: center;
-/*
-	padding: 0px 0px 8px 12px;
-*/
 	padding: 0 0 5px 3px;
 	margin: 0 0 5px 5px;
-  background-color: inherit;
+	background-color: inherit;
 }
 .qa-a-select-button,
 .qa-a-select-hover,
@@ -1028,7 +1007,7 @@ h2, h3, h4, h5, h6 {
 	height: 25px;
 	background: url("q2a-buttons.png") -78px 0 no-repeat;
 	margin-left: 5px;
-  margin-right: 5px;
+	margin-right: 5px;
 	border: 0;
 	cursor: pointer;
 }
