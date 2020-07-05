@@ -252,40 +252,13 @@ h2, h3, h4, h5, h6 {
 	margin-top: 0;
 }
 
-.qa-favoriting {
-	float: right;
-	margin: 20px auto 10px;
-	padding-right: 32px;
-	text-align: center;
-}
-
+.qa-favoriting,
 .qa-favorite-image,
 .qa-favorite-button,
 .qa-favorite-hover,
 .qa-unfavorite-button,
 .qa-unfavorite-hover {
-	width: 30px;
-	height: 28px;
-	background: url("q2a-buttons.png") -48px 0 no-repeat;
-	border: 0;
-}
-
-.qa-favorite-image {
-	display: inline-block;
-	vertical-align: middle;
-}
-.qa-favorite-button {
-	/* background-position: -48px -28px; */
 	display: none;
-}
-.qa-favorite-hover,
-.qa-favorite-button:hover {
-	cursor: pointer;
-}
-.qa-unfavorite-hover,
-.qa-unfavorite-button:hover {
-	background-position: -48px -28px;
-	cursor: pointer;
 }
 
 .qa-error {
