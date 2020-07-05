@@ -310,14 +310,24 @@ h2, h3, h4, h5, h6 {
 	vertical-align: top;
 }
 .qa-main {
+	display: flex;
+	flex-direction: column;
 	padding-left: 20px;
 	float: left;
 	margin-bottom: 2em;
 	width: 750px;
 	clear: left;
 }
-.qa-main-heading a {
-	text-decoration: none;
+.qa-main > div {
+	order: 2;
+}
+.qa-main > .qa-main-heading {order: 1;}
+.qa-main-heading a {text-decoration: none;}
+.qa-main > .qa-part-a-form {
+	order: 3;
+}
+.qa-main > .qa-suggest-next {
+	order: 4;
 }
 
 .qa-footer {
