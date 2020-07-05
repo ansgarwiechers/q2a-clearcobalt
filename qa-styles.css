@@ -321,6 +321,9 @@ h2, h3, h4, h5, h6 {
 .qa-main > div {
 	order: 2;
 }
+.qa-main > .qa-error {
+	margin-top: 24px;
+}
 .qa-main > .qa-main-heading {order: 1;}
 .qa-main-heading a {text-decoration: none;}
 .qa-main > .qa-part-a-form {
