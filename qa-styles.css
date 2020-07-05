@@ -27,6 +27,8 @@
 	margin: 0 0 10px;
 	padding: 2px;
 	border: 1px solid #c0c0c0;
+	scrollbar-width: auto;
+	scrollbar-color: #808080 #c0c0c0;
 }
 
 .wmd-preview {
