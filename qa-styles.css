@@ -489,6 +489,12 @@ h2, h3, h4, h5, h6 {
 .qa-page-selected {color: #ffffff; background-color: #606060;}
 .qa-page-ellipsis {}
 
+/* Standard form */
+
+.qa-form-table-boxed {
+  margin-left: 20px;
+}
+
 /* Standard form (tall version) */
 
 .qa-form-tall-table {width: 100%;}
