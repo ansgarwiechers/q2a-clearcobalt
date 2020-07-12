@@ -416,15 +416,15 @@ h2, h3, h4, h5, h6 {
 .qa-nav-main-item, .qa-nav-main-item-opp {}
 .qa-nav-main-item {
 	float: left;
-	margin-right: 4px;
+	margin-right: 2px;
 }
 .qa-nav-main-item-opp {
 	float: right;
-	margin-left: 4px;
+	margin-left: 2px;
 }
 .qa-nav-main-link {
 	display: block;
-	padding: 4px 10px;
+	padding: 2px 7px;
 	background-color: #c0c0c0;
 }
 .qa-nav-main-link:hover, .qa-nav-main-selected {
@@ -438,7 +438,7 @@ h2, h3, h4, h5, h6 {
 }
 
 .qa-nav-main-ask {
-	margin-left: 32px;
+	margin-left: 20px;
 }
 
 .qa-nav-main-hot .qa-nav-main-link {
@@ -456,7 +456,7 @@ h2, h3, h4, h5, h6 {
 	font-size: 12px;
 }
 .qa-nav-sub-item {float: left; margin: 0 2px 2px 0;}
-.qa-nav-sub-link {background-color: #e0e0e0; font-weight: bold; padding: 5px 8px; display: block;}
+.qa-nav-sub-link {background-color: #e0e0e0; font-weight: bold; padding: 3px 7px; display: block;}
 .qa-nav-sub-link:link,.qa-nav-sub-link:visited {color: #909090;}
 .qa-nav-sub-link:hover {color: #ffffff; background-color: #c0c0c0; text-decoration: none;}
 .qa-nav-sub-selected {color: #ffffff; background-color: #c0c0c0;}
