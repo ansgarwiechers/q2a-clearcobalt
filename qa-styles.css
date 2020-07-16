@@ -52,7 +52,7 @@
 	border: 0;
 	background-color: #f0f0f0;
 	font-family: "Liberation Mono", "Courier New", Courier, monospace;
-	scrollbar-width: thin;
+	scrollbar-width: auto;
 	scrollbar-color: #808080 #c0c0c0;
 }
 
