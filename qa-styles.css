@@ -372,6 +372,7 @@ h2, h3, h4, h5, h6 {
 	font-size: 40px;
 	font-weight: bold;
 }
+.qa-logo > .qa-logo-link {color: #ffffff;} /* IE8 */
 
 .qa-nav-user {
 	float: right;
