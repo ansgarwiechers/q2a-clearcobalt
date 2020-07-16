@@ -1032,7 +1032,7 @@ h2, h3, h4, h5, h6 {
 .qa-c-item-expand {display: block; color: #606060; font-style: italic; margin: 4px 0;}
 .qa-c-item-content {display: block; font-size: 12px; margin-bottom: 2px;}
 .qa-c-item-footer {position: relative; height: 1%;} /* height for IE6 */
-.qa-c-item-avatar {display: inline-block; vertical-align: middle; margin-right: 4px;}
+.qa-c-item-avatar {display: none;}
 .qa-c-item-meta {display: inline-block; vertical-align: middle; font-size: 10px; color: #606060;}
 .qa-c-item-who-title {}
 .qa-c-item-who-points {display: none;}
