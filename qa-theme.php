@@ -186,7 +186,11 @@ class qa_html_theme extends qa_html_theme_base
 
 	function vote_count($post)
 	{
-		$post['netvotes_view']['data'] = str_replace( '+', '', $post['netvotes_view']['data'] );
+		if ($post['raw']['type'] == 'C' and $post['upvotes_raw'] == '0' and $post['downvotes_raw'] == '0') {
+			$post['netvotes_view']['data'] = '';
+		} else {
+			$post['netvotes_view']['data'] = str_replace( '+', '', $post['netvotes_view']['data'] );
+		}
 		parent::vote_count($post);
 	}
 
