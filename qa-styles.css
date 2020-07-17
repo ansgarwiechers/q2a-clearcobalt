@@ -91,7 +91,7 @@ code {background-color: #f0f0f0; padding: 1px 0.2em 1px 0.2em; font-size: 0.9em;
 .wmd-button > span {
 	/* note: background-image is set in plugin script */
 	background-repeat: no-repeat;
-	background-position: 0px 0px;
+	background-position: 0 0;
 	width: 20px;
 	height: 20px;
 	display: inline-block;
@@ -511,7 +511,7 @@ h2, h3, h4, h5, h6 {
 .qa-form-tall-label {padding: 8px 8px 2px 8px;}
 .qa-c-form .qa-form-tall-label {font-size: 12px;}
 
-.qa-form-tall-data {padding: 0px 8px 8px 8px; width: 480px;}
+.qa-form-tall-data {padding: 0 8px 8px 8px; width: 480px;}
 .qa-form-tall-text,
 .qa-form-tall-number {padding: 3px;}
 .qa-form-tall-text,
@@ -1037,7 +1037,7 @@ h2, h3, h4, h5, h6 {
 .qa-c-item-who-title {}
 .qa-c-item-who-points {display: none;}
 
-.qa-c-item-buttons {display: block; position: absolute; bottom: 0px; right: 0px;}
+.qa-c-item-buttons {display: block; position: absolute; bottom: 6px; right: 0;}
 
 /* Related questions and activity count widgets */
 
