@@ -1027,7 +1027,6 @@ h2 {
 .qa-voting, .qa-a-count {
   float: left;
   width: @voteboxwidth;
-  padding-top: 2px;
   padding-bottom: 5px;
   text-align: center;
 }
@@ -1145,15 +1144,21 @@ h2 {
   display: none;
 }
 
-.qa-q-view .qa-voting {
-  background-color: transparent;
-  border: 0;
+.qa-q-view {
+  .qa-voting {
+    background-color: transparent;
+    border: 0;
+    padding-top: 4px;
+  }
 }
 
-.qa-a-list-item .qa-voting {
-  background: transparent;
-  border: 0;
-  height: auto;
+.qa-a-list-item {
+  .qa-voting {
+    background: transparent;
+    border: 0;
+    height: auto;
+    padding-top: 9px;
+  }
 }
 
 .qa-q-list-item {
@@ -1234,6 +1239,7 @@ h2 {
 .qa-q-item-stats {
   float: left;
   width: @liststatswidth;
+  padding-top: 2px;
 }
 
 .qa-view-count {

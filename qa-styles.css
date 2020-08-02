@@ -834,7 +834,6 @@ h2 {
 .qa-a-count {
   float: left;
   width: 56px;
-  padding-top: 2px;
   padding-bottom: 5px;
   text-align: center;
 }
@@ -944,11 +943,13 @@ h2 {
 .qa-q-view .qa-voting {
   background-color: transparent;
   border: 0;
+  padding-top: 4px;
 }
 .qa-a-list-item .qa-voting {
   background: transparent;
   border: 0;
   height: auto;
+  padding-top: 9px;
 }
 .qa-q-list-item .qa-vote-buttons,
 .qa-q-list-item .qa-vote-buttons-net {
@@ -1037,6 +1038,7 @@ h2 {
 .qa-q-item-stats {
   float: left;
   width: 127px;
+  padding-top: 2px;
 }
 .qa-view-count {
   display: block;
