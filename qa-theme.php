@@ -187,7 +187,7 @@ class qa_html_theme extends qa_html_theme_base
 	function vote_count($post)
 	{
 		if ($post['raw']['type'] == 'C' and $post['upvotes_raw'] == '0' and $post['downvotes_raw'] == '0') {
-			$post['netvotes_view']['data'] = '';
+			$post['netvotes_view']['data'] = '&nbsp;';
 		} else {
 			$post['netvotes_view']['data'] = str_replace( '+', '', $post['netvotes_view']['data'] );
 		}

@@ -1151,12 +1151,9 @@ h2 {
   }
 }
 
-.qa-a-list-item {
-  .qa-voting {
-    background: transparent;
-    border: 0;
-    height: auto;
-    padding-top: 9px;
+.qa-q-view-stats {
+  .qa-vote-second-button, .qa-voted-down-button, .qa-voted-down-hover {
+    margin: -6px auto 0;
   }
 }
 
@@ -1167,8 +1164,12 @@ h2 {
 }
 
 .qa-c-list-item {
+  border-bottom: @borderdotted;
+  padding: 0 0 0 6px;
+
   .qa-voting {
     width: 35px;
+    padding-top: 9px;
   }
 
   .qa-vote-buttons {
@@ -1408,6 +1409,19 @@ h2 {
 .qa-a-list-item {
   margin-bottom: 40px;
   zoom: 1; // for IE
+
+  & > form > div > .qa-voting {
+    background: transparent;
+    border: 0;
+    height: auto;
+    padding-top: 9px;
+
+    >div {
+      >.qa-vote-second-button, >.qa-voted-down-button, >.qa-voted-down-hover {
+        margin: -6px auto 0;
+      }
+    }
+  }
 }
 
 .qa-a-list-item-hidden {
@@ -1491,11 +1505,6 @@ h2 {
 }
 
 /* Comments */
-
-.qa-c-list-item {
-  border-bottom: @borderdotted;
-  padding: 0 0 0 6px;
-}
 
 .qa-c-item-hidden {
   .qa-c-item-meta, .qa-c-item-what {

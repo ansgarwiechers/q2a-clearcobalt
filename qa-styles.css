@@ -944,18 +944,22 @@ h2 {
   border: 0;
   padding-top: 4px;
 }
-.qa-a-list-item .qa-voting {
-  background: transparent;
-  border: 0;
-  height: auto;
-  padding-top: 9px;
+.qa-q-view-stats .qa-vote-second-button,
+.qa-q-view-stats .qa-voted-down-button,
+.qa-q-view-stats .qa-voted-down-hover {
+  margin: -6px auto 0;
 }
 .qa-q-list-item .qa-vote-buttons,
 .qa-q-list-item .qa-vote-buttons-net {
   display: none;
 }
+.qa-c-list-item {
+  border-bottom: 1px dotted #606060;
+  padding: 0 0 0 6px;
+}
 .qa-c-list-item .qa-voting {
   width: 35px;
+  padding-top: 9px;
 }
 .qa-c-list-item .qa-vote-buttons {
   float: left;
@@ -1203,6 +1207,17 @@ h2 {
   margin-bottom: 40px;
   zoom: 1;
 }
+.qa-a-list-item > form > div > .qa-voting {
+  background: transparent;
+  border: 0;
+  height: auto;
+  padding-top: 9px;
+}
+.qa-a-list-item > form > div > .qa-voting > div > .qa-vote-second-button,
+.qa-a-list-item > form > div > .qa-voting > div > .qa-voted-down-button,
+.qa-a-list-item > form > div > .qa-voting > div > .qa-voted-down-hover {
+  margin: -6px auto 0;
+}
 .qa-a-list-item-hidden .qa-voting {
   background: transparent none;
   color: #c0c0c0;
@@ -1288,10 +1303,6 @@ h2 {
   margin-top: 6px;
 }
 /* Comments */
-.qa-c-list-item {
-  border-bottom: 1px dotted #606060;
-  padding: 0 0 0 6px;
-}
 .qa-c-item-hidden .qa-c-item-meta,
 .qa-c-item-hidden .qa-c-item-what {
   color: #c0c0c0;
