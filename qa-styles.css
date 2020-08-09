@@ -424,7 +424,7 @@ h2 {
 .qa-search-button {
   background-color: #c0c0c0;
   border: 1px solid #909090;
-  padding: 1px 5px;
+  padding: 0 5px;
 }
 /* Main, sub and category navigation */
 .qa-nav-main {
