@@ -20,6 +20,7 @@
 
 // dimensions
 @acceptboxwidth:   48px;
+@avatarsize:       40px;
 @bodywidth:       980px;
 @formwidth:       480px;
 @labelwidth:      100px;
@@ -91,8 +92,8 @@
   vertical-align: middle;
   margin-right: 2px;
   & img {
-    height: 40px;
-    width: 40px;
+    height: @avatarsize;
+    width: @avatarsize;
   }
 }
 
@@ -127,7 +128,7 @@
 
 /* Markdown editor styles */
 
-@input_width: @mainwidth - 152px;
+@input_width:   @mainwidth - 152px;
 @preview_width: @input_width - 14px;
 
 .wmd-button-bar {
@@ -421,6 +422,7 @@ h2 {
 .qa-header {
   padding: 10px 20px 0 20px;
 }
+
 .qa-sidepanel {
   float: right;
   width: @sidepanelwidth;
@@ -1634,4 +1636,262 @@ h2 {
 
 .qa-avatar-link, .qa-avatar-link:hover {
   text-decoration: none;
+}
+
+/* mobile view */
+
+@media screen and (max-width: @bodywidth) {
+  .qa-a-item-main,
+  .qa-body-wrapper,
+  .qa-form-tall-data,
+  .qa-main,
+  .qa-part-form,
+  .qa-post-content,
+  .qa-q-item-main,
+  .qa-search,
+  .qa-search-field,
+  .qa-sidepanel,
+  .qa-voting,
+  .wmd-input {
+    width: 100%;
+  }
+
+  .wmd-spacer {
+    display: none;
+  }
+
+  .wmd-button {
+    position: relative;
+    left: auto !important;
+  }
+
+  .qa-header {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  div {
+    width: inherit !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  // head section
+
+  .qa-logo {
+    margin-bottom: 10px;
+    padding-left: 10px;
+  }
+
+  .qa-search {
+    float: left;
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    clear: left;
+  }
+
+  // navigation
+
+  .qa-nav-main-list {
+    padding-left: 4px;
+
+    >li {
+      float: left;
+      margin: 0;
+    }
+  }
+
+  .qa-nav-main-categories, .qa-nav-main-item-opp, .qa-nav-main-tag, .qa-nav-main-user {
+    display: none;
+  }
+
+  .qa-nav-main-terms-and-conditions {
+    display: inline;
+  }
+
+  .qa-nav-user {
+    padding-right: 10px;
+  }
+
+  .qa-nav-user-list, .qa-nav-user-item {
+    display: block;
+    text-align: right;
+    line-height: 2;
+    font-size: 1.1em;
+  }
+
+  // main section
+
+  .qa-main {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .qa-q-item-stats {
+    width: 100% !important;
+
+    div, span {
+      display: inline-block;
+      width: unset !important;
+      font-weight: normal;
+      line-height: 1;
+      vertical-align: top;
+      margin: 0;
+      padding: 0;
+    }
+
+    .qa-netvote-count-data, .qa-a-count-data, .qa-view-count-data {
+      float: left;
+      margin-right: 0.2em;
+      padding: 0;
+      font-size: 1.1em;
+      font-weight: normal;
+    }
+    .qa-netvote-count-pad, .qa-a-count-pad, .qa-view-count-pad {
+      float: right;
+      margin-right: 10px;
+      padding: 0;
+      font-size: 1.1em;
+    }
+  }
+
+  .qa-q-view-main, .qa-a-item-main {
+    width: ~"calc(100% - 40px)" !important;
+  }
+
+  .qa-q-view-avatar-meta, .qa-a-item-avatar-meta {
+    position: relative !important;
+    display: inline-block !important;
+    >span {
+      vertical-align: middle !important;
+    }
+  }
+  .qa-q-view-meta, .qa-a-item-meta {
+    float: right;
+    width: ~"calc(100% - 50px)" !important;
+    line-height: 1;
+    display: inline-block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  div.qa-a-selection {
+    width: 50px !important;
+
+    >.qa-a-selected {
+      width: 35px !important;
+      margin-left: 5px !important;
+      margin-right: 5px !important;
+    }
+  }
+
+  .qa-q-view-stats {
+    .qa-view-count { display: none; }
+  }
+
+  .qa-q-item-stats, .qa-q-item-main {
+    float: left;
+    display: block;
+    width: 100%;
+    clear: left;
+  }
+
+  .qa-form-light-button {
+    margin: 0;
+  }
+
+  .qa-voting {
+    padding-right: 10px;
+  }
+
+  .qa-part-a-list {
+    margin-top: 10px;
+  }
+
+  .qa-a-item-c-list, .qa-c-list-item, .qa-q-view-c-list {
+    width: 100% !important;
+    margin: 0;
+    padding: 0;
+  }
+
+  .qa-q-view-c-list {
+    margin-top: 5px;
+  }
+
+  .qa-c-list-item {
+    >form {
+      display: inline-block;
+      z-index: 1;
+
+      div {
+        display: inline-block;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+    }
+
+    >form:first-child {
+      float: left;
+      width: 46px !important;
+      height: 25px !important;
+
+      div {
+        position: relative;
+      }
+      .qa-voting {
+        padding: 7px 0 0 1px !important;
+      }
+      .qa-vote-buttons {
+        float: left;
+        width: 10px !important;
+      }
+      .qa-vote-up-button, .qa-vote-down-button, .qa-voted-up-button, .qa-voted-down-button, .qa-vote-up-disabled, .qa-vote-down-disabled {
+        width: 10px;
+        height: 10px;
+      }
+      .qa-vote-up-button, .qa-voted-up-button, .qa-vote-up-disabled {
+        border-width: 4px 4px 0 0;
+      }
+      .qa-vote-down-button, .qa-voted-down-button, .qa-vote-down-disabled {
+        border-width: 0 0 4px 4px;
+      }
+      .qa-vote-count {
+        float: right;
+        width: 30px !important;
+        padding-top: 6px !important;
+      }
+    }
+
+    >form:nth-child(2) {
+      float: right;
+      width:  ~"calc(100% - 50px)";
+      min-height: 25px;
+
+      .qa-c-item-content, .qa-c-item-footer {
+        width: 100% !important;
+
+        .qa-c-item-buttons {
+          float: right;
+          width: unset !important;
+          bottom: 0 !important;
+        }
+      }
+    }
+  }
+
+  .qa-part-custom {
+    width: 90%;
+    li { margin-left: 1em; }
+  }
+
+  // footer section
+
+  .qa-footer {
+    font-size: 1em;
+  }
+
+  .qa-attribution, .qa-sidepanel {
+    display: none;
+  }
 }

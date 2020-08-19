@@ -37,6 +37,12 @@ class qa_html_theme extends qa_html_theme_base
 		parent::head_title();
 	}
 
+	function head_metas()
+	{
+		// set viewport for responsive layout
+		$this->output('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+	}
+
 	function page_title_error()
 	{
 		if ( isset($this->content['q_view']['url']) )
