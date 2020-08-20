@@ -1045,6 +1045,7 @@ h2 {
 }
 .qa-view-count {
   display: block;
+  margin-right: 15px;
   clear: both;
   color: #909090;
   text-align: center;
