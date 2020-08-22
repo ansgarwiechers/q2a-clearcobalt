@@ -132,6 +132,13 @@ code {
 .qa-flag-wrap {
   display: none;
 }
+/* Tag Descriptions styles */
+.qa-tag-description ol {
+  padding-left: 2em;
+}
+.qa-tag-description ul {
+  padding-left: 1em;
+}
 /* General page layout */
 * {
   margin: 0;

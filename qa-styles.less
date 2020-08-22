@@ -97,6 +97,11 @@
   }
 }
 
+.list-padding() {
+  ol  { padding-left: 2em; }
+  ul  { padding-left: 1em; }
+}
+
 .metainfo() {
   display: inline-block;
   vertical-align: middle;
@@ -154,8 +159,7 @@
 
 .wmd-preview, .entry-content {
   img { max-width: 100%; }
-  ol  { padding-left: 2em; }
-  ul  { padding-left: 1em; }
+  .list-padding();
 }
 
 .qa-q-view-content, .qa-a-item-content, .wmd-preview {
@@ -253,6 +257,12 @@ code {
 
 .qa-flag-wrap {display: none;}
 
+/* Tag Descriptions styles */
+
+.qa-tag-description {
+  .list-padding();
+}
+
 // ==================================================================
 // main styles
 // ==================================================================
@@ -327,8 +337,7 @@ hr {
   blockquote, li, p, pre {
     margin-bottom: 0.7em;
   }
-  ol { padding-left: 2em; }
-  ul { padding-left: 1em; }
+  .list-padding();
   blockquote {
     p { margin: 0; }
   }
