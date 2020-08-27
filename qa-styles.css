@@ -780,6 +780,9 @@ h2 {
   font-size: 0.9em;
 }
 /* Question list */
+.qa-q-list .qa-view-count {
+  margin-right: 15px;
+}
 .qa-q-list-item {
   margin-bottom: 24px;
   zoom: 1;
@@ -1062,7 +1065,6 @@ h2 {
 }
 .qa-view-count {
   display: block;
-  margin-right: 15px;
   clear: both;
   color: #909090;
   text-align: center;
