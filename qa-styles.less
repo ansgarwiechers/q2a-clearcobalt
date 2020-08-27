@@ -6,7 +6,8 @@
 	Theme Date: 2020-08-01
 	Theme Author: Ansgar Wiechers
 	Theme Author URI: http://www.planetcobalt.net/
-	Theme License: GPLv2
+	Theme License: GPL-3.0
+	Font License: Apache-2.0
 
 	This theme is based on the 'Clean Base' theme by Scott Vivian and also
 	includes the styles from his markdown-editor plugin.
@@ -65,12 +66,19 @@
 @bgquote:     @basecolor + @color_offset;
 
 // text
-@sans-serif: "open sans", arial, helvetica, sans-serif;
-@serif:      georgia, "times new roman", times, roman, serif;
-@monospace:  "dejavu sans mono", "liberation mono", "courier new", courier, monospace;
+@font-face {
+  font-family: open-sans;
+  src: url('opensans-regular.woff');
+}
+@font-face {
+  font-family: roboto-mono;
+  src: url('robotomono-regular.woff');
+}
+@sans-serif: open-sans, arial, helvetica, sans-serif;
+@monospace:  roboto-mono, "dejavu sans mono", "courier new", courier, monospace;
 
 @basesize:     13px;
-@counterlarge: 1.9em;
+@counterlarge: 1.7em;
 @countersmall: 0.9em;
 
 // borders
@@ -1767,7 +1775,7 @@ h2 {
   }
 
   .qa-q-view-main, .qa-a-item-main {
-    width: ~"calc(100% - 40px)" !important;
+    width: ~"calc(100% - 50px)" !important;
   }
 
   .qa-q-view-avatar-meta, .qa-a-item-avatar-meta {

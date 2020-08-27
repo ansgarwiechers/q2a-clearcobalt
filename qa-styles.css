@@ -6,13 +6,22 @@
 	Theme Date: 2020-08-01
 	Theme Author: Ansgar Wiechers
 	Theme Author URI: http://www.planetcobalt.net/
-	Theme License: GPLv2
+	Theme License: GPL-3.0
+	Font License: Apache-2.0
 
 	This theme is based on the 'Clean Base' theme by Scott Vivian and also
 	includes the styles from his markdown-editor plugin.
 	See <https://github.com/svivian/q2a-themes>.
 	See <https://github.com/svivian/q2a-markdown-editor>.
 */
+@font-face {
+  font-family: open-sans;
+  src: url('opensans-regular.woff');
+}
+@font-face {
+  font-family: roboto-mono;
+  src: url('robotomono-regular.woff');
+}
 /* Markdown editor styles */
 .wmd-button-bar {
   width: 100%;
@@ -53,7 +62,7 @@
   margin: 0 0 0.5em;
   padding: 2px 4px;
   background-color: #f0f0f0;
-  font-family: "dejavu sans mono", "liberation mono", "courier new", courier, monospace;
+  font-family: roboto-mono, "dejavu sans mono", "courier new", courier, monospace;
   scrollbar-width: auto;
   scrollbar-color: #808080 #c0c0c0;
 }
@@ -155,7 +164,7 @@ body,
 td,
 input,
 textarea {
-  font-family: "open sans", arial, helvetica, sans-serif;
+  font-family: open-sans, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 1.4;
 }
@@ -181,7 +190,7 @@ blockquote {
   margin-bottom: 1.3em;
   background-color: #f0f0f0;
   border-left: 3px solid #c0c0c0;
-  font-family: "open sans", arial, helvetica, sans-serif;
+  font-family: open-sans, arial, helvetica, sans-serif;
   font-style: italic;
 }
 blockquote code {
@@ -223,7 +232,7 @@ hr {
 }
 .qa-notice-close-button,
 .qa-notice-close-hover {
-  font-family: "open sans", arial, helvetica, sans-serif;
+  font-family: open-sans, arial, helvetica, sans-serif;
   color: #cc0000;
   font-size: 1.5em;
   background: none;
@@ -920,7 +929,7 @@ h2 {
 }
 .qa-netvote-count-data {
   display: block;
-  font-size: 1.9em;
+  font-size: 1.7em;
   font-weight: bold;
   line-height: 1;
 }
@@ -1038,7 +1047,7 @@ h2 {
 }
 .qa-a-count-data {
   display: block;
-  font-size: 1.9em;
+  font-size: 1.7em;
   font-weight: bold;
   line-height: 1;
 }
@@ -1529,7 +1538,7 @@ h2 {
   }
   .qa-q-view-main,
   .qa-a-item-main {
-    width: calc(100% - 40px) !important;
+    width: calc(100% - 50px) !important;
   }
   .qa-q-view-avatar-meta,
   .qa-a-item-avatar-meta {
