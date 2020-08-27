@@ -73,6 +73,7 @@ pre code {
   border: 0;
 }
 code {
+  font-family: roboto-mono, "dejavu sans mono", "courier new", courier, monospace;
   background-color: #f0f0f0;
   padding: 1px 0.2em 1px 0.2em;
   font-size: 0.9em;
