@@ -626,6 +626,9 @@ h2 {
   padding: 0 8px 8px 8px;
   width: 480px;
 }
+.qa-form-tall-data > ul {
+  padding-left: 1em;
+}
 .qa-form-tall-text,
 .qa-form-tall-number {
   padding: 3px;
