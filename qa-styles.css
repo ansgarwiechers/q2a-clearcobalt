@@ -66,6 +66,9 @@
   scrollbar-width: auto;
   scrollbar-color: #808080 #c0c0c0;
 }
+pre {
+  font-size: 0.9em;
+}
 pre code {
   display: block;
   margin: 0;
@@ -76,7 +79,7 @@ code {
   font-family: roboto-mono, "dejavu sans mono", "courier new", courier, monospace;
   background-color: #f0f0f0;
   padding: 1px 0.2em 1px 0.2em;
-  font-size: 0.9em;
+  font-size: inherit;
 }
 .wmd-button-row {
   position: relative;
