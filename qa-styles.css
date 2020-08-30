@@ -108,6 +108,7 @@
 }
 pre {
   font-size: 0.9em;
+  line-height: 1.4;
 }
 pre code {
   display: block;
@@ -118,7 +119,7 @@ pre code {
 code {
   font-family: roboto-mono, "dejavu sans mono", "courier new", courier, monospace;
   background-color: #f0f0f0;
-  padding: 1px 0.2em 1px 0.2em;
+  padding: 0 0.2em;
   font-size: inherit;
 }
 .wmd-button-row {
@@ -210,7 +211,7 @@ input,
 textarea {
   font-family: open-sans, arial, helvetica, sans-serif;
   font-size: 13px;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 body {
   background-color: #c0c0c0;
