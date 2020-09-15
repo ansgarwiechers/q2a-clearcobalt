@@ -642,6 +642,17 @@ h2 {
   color: #ffffff;
   background-color: #606060;
 }
+/* Custom pages */
+.qa-part-custom ul,
+.qa-part-custom ol {
+  margin-bottom: 0.5em;
+}
+.qa-part-custom ol {
+  padding-left: 2em;
+}
+.qa-part-custom ul {
+  padding-left: 1em;
+}
 /* Standard form */
 .qa-form-table-boxed {
   margin-left: 20px;
@@ -1710,9 +1721,6 @@ h2 {
   }
   .qa-part-custom {
     width: 90%;
-  }
-  .qa-part-custom li {
-    margin-left: 1em;
   }
   .qa-footer {
     font-size: 1em;
