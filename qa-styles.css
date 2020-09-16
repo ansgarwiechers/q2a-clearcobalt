@@ -205,6 +205,9 @@ code {
 * html .qa-footer {
   padding-top: 6px;
 }
+html {
+  overflow-y: scroll;
+}
 body,
 td,
 input,
