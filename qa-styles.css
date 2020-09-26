@@ -1038,8 +1038,47 @@ h2 {
   border-bottom: 1px dotted #606060;
   padding: 0 0 0 6px;
 }
+.qa-c-list-item > form {
+  display: inline-block;
+  z-index: 1;
+}
+.qa-c-list-item > form div {
+  display: inline-block;
+  margin: 0 !important;
+}
+.qa-c-list-item > form:first-child {
+  float: left;
+  width: 46px;
+  height: 25px;
+}
+.qa-c-list-item > form:first-child div {
+  position: relative;
+}
+.qa-c-list-item > form:first-child .qa-vote-count {
+  float: right;
+  width: 40px;
+  padding-top: 4px;
+  text-align: center;
+  vertical-align: middle;
+}
+.qa-c-list-item > form:nth-child(2) {
+  float: right;
+  width: calc(100% - 50px);
+  min-height: 25px;
+  padding-top: 2px;
+}
+.qa-c-list-item > form:nth-child(2) .qa-c-item-content,
+.qa-c-list-item > form:nth-child(2) .qa-c-item-footer {
+  width: 100%;
+}
+.qa-c-list-item > form:nth-child(2) .qa-c-item-content .qa-c-item-buttons,
+.qa-c-list-item > form:nth-child(2) .qa-c-item-footer .qa-c-item-buttons {
+  float: right;
+  width: unset;
+  bottom: 0;
+}
 .qa-c-list-item .qa-voting {
-  width: 35px;
+  width: 50px;
   padding-top: 9px;
 }
 .qa-c-list-item .qa-vote-buttons {
@@ -1092,12 +1131,6 @@ h2 {
 }
 .qa-c-list-item .qa-vote-down-disabled {
   border-color: #e0e0e0;
-}
-.qa-c-list-item .qa-vote-count {
-  float: right;
-  padding-top: 3px;
-  text-align: center;
-  vertical-align: middle;
 }
 .qa-c-list-item .qa-netvote-count-data {
   font-size: 0.9em;
@@ -1659,28 +1692,10 @@ h2 {
   .qa-q-view-c-list {
     margin-top: 5px;
   }
-  .qa-c-list-item > form {
-    display: inline-block;
-    z-index: 1;
-  }
-  .qa-c-list-item > form div {
-    display: inline-block;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-  .qa-c-list-item > form:first-child {
-    float: left;
-    width: 46px !important;
-    height: 25px !important;
-  }
-  .qa-c-list-item > form:first-child div {
-    position: relative;
-  }
   .qa-c-list-item > form:first-child .qa-voting {
     padding: 7px 0 0 1px !important;
   }
   .qa-c-list-item > form:first-child .qa-vote-buttons {
-    float: left;
     width: 10px !important;
   }
   .qa-c-list-item > form:first-child .qa-vote-up-button,
@@ -1703,14 +1718,8 @@ h2 {
     border-width: 0 0 4px 4px;
   }
   .qa-c-list-item > form:first-child .qa-vote-count {
-    float: right;
     width: 30px !important;
     padding-top: 6px !important;
-  }
-  .qa-c-list-item > form:nth-child(2) {
-    float: right;
-    width: calc(100% - 50px);
-    min-height: 25px;
   }
   .qa-c-list-item > form:nth-child(2) .qa-c-item-content,
   .qa-c-list-item > form:nth-child(2) .qa-c-item-footer {
@@ -1718,9 +1727,7 @@ h2 {
   }
   .qa-c-list-item > form:nth-child(2) .qa-c-item-content .qa-c-item-buttons,
   .qa-c-list-item > form:nth-child(2) .qa-c-item-footer .qa-c-item-buttons {
-    float: right;
     width: unset !important;
-    bottom: 0 !important;
   }
   .qa-part-custom {
     width: 90%;

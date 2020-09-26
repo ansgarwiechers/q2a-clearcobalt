@@ -1253,8 +1253,53 @@ h2 {
   border-bottom: @borderdotted;
   padding: 0 0 0 6px;
 
+  >form {
+    display: inline-block;
+    z-index: 1;
+
+    div {
+      display: inline-block;
+      margin: 0 !important;
+    }
+  }
+
+  >form:first-child {
+    float: left;
+    width: 46px;
+    height: 25px;
+
+    div {
+      position: relative;
+    }
+
+    .qa-vote-count {
+      float: right;
+      width: 40px;
+      padding-top: 4px;
+      text-align: center;
+      vertical-align: middle;
+    }
+  }
+
+  >form:nth-child(2) {
+    float: right;
+    width:  ~"calc(100% - 50px)";
+    min-height: 25px;
+    padding-top: 2px;
+
+    .qa-c-item-content, .qa-c-item-footer {
+      width: 100%;
+
+      .qa-c-item-buttons {
+        float: right;
+        width: unset;
+        bottom: 0;
+      }
+    }
+  }
+
   .qa-voting {
-    width: 35px;
+    width: 50px;
     padding-top: 9px;
   }
 
@@ -1289,13 +1334,6 @@ h2 {
   .qa-vote-down-button   { border-color: @linecolor; cursor: pointer; }
   .qa-voted-down-button  { border-color: @warndark; }
   .qa-vote-down-disabled { border-color: @disabled; }
-
-  .qa-vote-count {
-    float: right;
-    padding-top: 3px;
-    text-align: center;
-    vertical-align: middle;
-  }
 
   .qa-netvote-count-data {
     font-size: @countersmall;
@@ -1904,30 +1942,11 @@ h2 {
   }
 
   .qa-c-list-item {
-    >form {
-      display: inline-block;
-      z-index: 1;
-
-      div {
-        display: inline-block;
-        margin: 0 !important;
-        padding: 0 !important;
-      }
-    }
-
     >form:first-child {
-      float: left;
-      width: 46px !important;
-      height: 25px !important;
-
-      div {
-        position: relative;
-      }
       .qa-voting {
         padding: 7px 0 0 1px !important;
       }
       .qa-vote-buttons {
-        float: left;
         width: 10px !important;
       }
       .qa-vote-up-button, .qa-vote-down-button, .qa-voted-up-button, .qa-voted-down-button, .qa-vote-up-disabled, .qa-vote-down-disabled {
@@ -1941,24 +1960,17 @@ h2 {
         border-width: 0 0 4px 4px;
       }
       .qa-vote-count {
-        float: right;
         width: 30px !important;
         padding-top: 6px !important;
       }
     }
 
     >form:nth-child(2) {
-      float: right;
-      width:  ~"calc(100% - 50px)";
-      min-height: 25px;
-
       .qa-c-item-content, .qa-c-item-footer {
         width: 100% !important;
 
         .qa-c-item-buttons {
-          float: right;
           width: unset !important;
-          bottom: 0 !important;
         }
       }
     }
