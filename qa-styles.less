@@ -39,6 +39,7 @@
 // colors
 @basecolor:        #c0c0c0;
 @disabled:         #e0e0e0;
+@highlightcolor:   #ffff00;
 @linkcolor:        #0000ff;
 @metatextcolor:    #606060;
 @successdark:      #009900;
@@ -396,6 +397,10 @@ hr {
   .list-padding();
   blockquote {
     p { margin: 0; }
+  }
+  // allow highlighting text in posts
+  span.highlight {
+    background-color: @highlightcolor;
   }
 }
 

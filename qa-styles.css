@@ -269,6 +269,9 @@ hr {
 .qa-post-content blockquote p {
   margin: 0;
 }
+.qa-post-content span.highlight {
+  background-color: #ffff00;
+}
 .qa-notice {
   background-color: #ffeeee;
   border-bottom: 2px solid #cc0000;
