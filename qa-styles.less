@@ -164,6 +164,12 @@
   scrollbar-color: (@basecolor - #404040) @basecolor;
 }
 
+.text-highlighting() {
+  span.highlight {
+    background-color: @highlightcolor;
+  }
+}
+
 .warn-box() {
   background-color: @warnlight;
   border: 1px solid @warndark;
@@ -204,6 +210,7 @@
   padding: 8px;
   border: 0;
   background-color: @bgshade;
+  .text-highlighting();
 }
 
 .wmd-preview, .entry-content {
@@ -398,10 +405,7 @@ hr {
   blockquote {
     p { margin: 0; }
   }
-  // allow highlighting text in posts
-  span.highlight {
-    background-color: @highlightcolor;
-  }
+  .text-highlighting();
 }
 
 .qa-notice {

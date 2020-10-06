@@ -82,6 +82,9 @@
   border: 0;
   background-color: #f9f9f9;
 }
+.wmd-preview span.highlight {
+  background-color: #ffff00;
+}
 .wmd-preview img,
 .entry-content img {
   max-width: 100%;
