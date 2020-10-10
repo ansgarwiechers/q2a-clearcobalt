@@ -328,6 +328,57 @@ code {
   }
 }
 
+/* Edit History styles */
+
+// note: Remove revisions.css from the edit-history plugin directory, otherwise
+//       the plugin default styles will take precedence over these styles.
+
+ins {
+  background-color: @successlight;
+  color: @successdark;
+  text-decoration: none;
+}
+
+del {
+  background-color: @warnlight;
+  color: @warndark;
+  text-decoration: line-through;
+}
+
+.diff-block {
+  margin: 0 0 20px;
+}
+
+.diff-date {
+  overflow: hidden;
+  margin: 0;
+  padding: 5px 10px;
+  line-height: 33px;
+  background-color: @bglight;
+
+  & > .qa-form-tall-button {
+    margin-top: 5px;
+  }
+}
+
+.diff-content {
+  padding: 10px;
+}
+
+.h2 {
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+.no-diff {
+  color: @textcolor;
+}
+
+.diff-button {
+  float: right;
+  margin-left: 5px;
+}
+
 /* Flag Reasons styles */
 
 .qa-flag-wrap {display: none;}

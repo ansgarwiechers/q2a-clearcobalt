@@ -199,6 +199,44 @@ code {
   font-size: 0.9em;
   font-weight: bold;
 }
+/* Edit History styles */
+ins {
+  background-color: #eeffee;
+  color: #009900;
+  text-decoration: none;
+}
+del {
+  background-color: #ffeeee;
+  color: #cc0000;
+  text-decoration: line-through;
+}
+.diff-block {
+  margin: 0 0 20px;
+}
+.diff-date {
+  overflow: hidden;
+  margin: 0;
+  padding: 5px 10px;
+  line-height: 33px;
+  background-color: #e0e0e0;
+}
+.diff-date > .qa-form-tall-button {
+  margin-top: 5px;
+}
+.diff-content {
+  padding: 10px;
+}
+.h2 {
+  font-weight: bold;
+  font-size: 1.4em;
+}
+.no-diff {
+  color: #000000;
+}
+.diff-button {
+  float: right;
+  margin-left: 5px;
+}
 /* Flag Reasons styles */
 .qa-flag-wrap {
   display: none;
