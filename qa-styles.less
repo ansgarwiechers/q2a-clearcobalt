@@ -131,6 +131,9 @@
 @borderwhite:  1px solid #ffffff;
 @borderdotted: 1px dotted (@linecolor - @color_offset);
 
+@kbd_shadow:   2px 2px (@basecolor + @color_offset) inset, -2px -2px @basecolor inset;
+@kbd_radius:   3px;
+
 .appearance-none() {
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -227,6 +230,18 @@
     background-color: @bgcode;
     font-family: @monospace;
     .scrollbar();
+  }
+  kbd {
+    border: @bordernormal;
+    margin: 0 0.1em;
+    padding: 0.1em 0.6em;
+    font-size: 90%;
+    -moz-box-shadow: @kbd_shadow;
+    -moz-border-radius: @kbd_radius;
+    -webkit-box-shadow: @kbd_shadow;
+    -webkit-border-radius: @kbd_radius;
+    box-shadow: @kbd_shadow;
+    border-radius: @kbd_radius;
   }
 }
 

@@ -109,6 +109,20 @@
   scrollbar-width: auto;
   scrollbar-color: #808080 #c0c0c0;
 }
+.qa-q-view-content kbd,
+.qa-a-item-content kbd,
+.wmd-preview kbd {
+  border: 1px solid #909090;
+  margin: 0 0.1em;
+  padding: 0.1em 0.6em;
+  font-size: 90%;
+  -moz-box-shadow: 2px 2px #f0f0f0 inset, -2px -2px #c0c0c0 inset;
+  -moz-border-radius: 3px;
+  -webkit-box-shadow: 2px 2px #f0f0f0 inset, -2px -2px #c0c0c0 inset;
+  -webkit-border-radius: 3px;
+  box-shadow: 2px 2px #f0f0f0 inset, -2px -2px #c0c0c0 inset;
+  border-radius: 3px;
+}
 pre {
   font-size: 0.9em;
   line-height: 1.4;
