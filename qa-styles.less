@@ -24,6 +24,7 @@
 @avatarsize:       40px;
 @bodywidth:       980px;
 @formwidth:       480px;
+@hidepadding:       5px;
 @labelwidth:      100px;
 @liststatswidth:  127px;
 @mainwidth:       750px;
@@ -606,6 +607,27 @@ h2 {
   & > .qa-part-a-form  {order: 3;}
   & > .qa-suggest-next {order: 4;}
   & > .qa-error {margin-top: 24px;}
+}
+
+.qa-main-hidden {
+  .qa-a-item-main {
+    background-color: @warnlight;
+    width: ~"calc(100% - 80px)";
+    padding: @hidepadding;
+  }
+  .qa-a-list-item {
+    .qa-vote-count {
+      color: @basecolor;
+    }
+    .qa-vote-up-button {
+      background-position: 0 -64px;
+      pointer-events: none;
+    }
+    .qa-vote-down-button {
+      background-position: -24px -64px;
+      pointer-events: none;
+    }
+  }
 }
 
 .qa-main-heading a {
@@ -1588,18 +1610,14 @@ h2 {
 }
 
 .qa-q-view-hidden {
+  & > .qa-q-view-main {
+    background-color: @warnlight;
+    width: ~"calc(100% - 80px)";
+    padding: @hidepadding;
+  }
   .qa-voting {
     background: transparent none;
     color: @basecolor;
-  }
-  .qa-category-link, .qa-q-view-content, .qa-q-view-who-title, .qa-user-link {
-    color: @textshaded;
-  }
-  .qa-q-view-meta {
-    color: @basecolor;
-  }
-  .qa-tag-link {
-    background-color: @basecolor;
   }
 }
 
@@ -1624,15 +1642,13 @@ h2 {
 }
 
 .qa-a-list-item-hidden {
-  .qa-voting {
-    background: transparent none;
-    color: @basecolor;
+  .qa-a-item-main {
+    background-color: @warnlight;
+    width: ~"calc(100% - 80px)";
+    padding: @hidepadding;
   }
-  .qa-a-item-content, .qa-a-item-who-title, .qa-user-link {
-    color: @textshaded;
-  }
-  .qa-a-item-meta, .qa-a-item-what {
-    color: @basecolor;
+  .qa-voting  {
+    color: @basecolor !important;
   }
 }
 
@@ -1706,11 +1722,18 @@ h2 {
 /* Comments */
 
 .qa-c-item-hidden {
-  .qa-c-item-meta, .qa-c-item-what {
-    color: @basecolor;
+  width: ~"calc(100% - 15px)";
+
+  .qa-post-content {
+    background-color: @warnlight;
+    padding: @hidepadding @hidepadding 0 @hidepadding;
   }
-  .qa-c-item-who-title, .qa-user-link {
-    color: @textshaded;
+  .qa-c-item-footer {
+    background-color: @warnlight;
+    padding: 0 @hidepadding @hidepadding @hidepadding;
+  }
+  .qa-vote-count {
+    color: @basecolor;
   }
 }
 
@@ -1957,6 +1980,17 @@ h2 {
     width: ~"calc(100% - 50px)" !important;
   }
 
+  .qa-q-view-hidden {
+    .qa-q-view-main {
+      width: ~"calc(100% - 55px)" !important;
+    }
+  }
+  .qa-main-hidden, .qa-a-list-item-hidden {
+    .qa-a-item-main {
+      width: ~"calc(100% - 55px)" !important;
+    }
+  }
+
   .qa-q-view-avatar-meta, .qa-a-item-avatar-meta {
     position: relative !important;
     display: inline-block !important;
@@ -2049,6 +2083,10 @@ h2 {
         }
       }
     }
+  }
+
+  .qa-c-item-hidden {
+    width: ~"calc(100% - 10px)" !important;
   }
 
   .qa-part-custom {
