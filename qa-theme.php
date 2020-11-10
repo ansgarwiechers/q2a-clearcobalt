@@ -249,6 +249,24 @@ class qa_html_theme extends qa_html_theme_base
 		}
 	}
 
+	function post_meta_when($post, $class) {
+		$post_created = $post['raw']['created'];
+		$interval     = qa_opt('db_time') - $post_created;
+		$fulldatedays = qa_opt('show_full_date_days');
+
+		if ($interval < 0 || (isset($fulldatedays) && $interval > 86400 * $fulldatedays)) {
+			$gmdate = gmdate('Y-m-d H:i:s e', $post_created);
+			$post_when = array(
+				'data' => '<time itemprop="dateCreated" datetime="' . $gmdate . '" title="' . $gmdate . '">' . gmdate('Y-m-d', $post_created) . '</time>',
+			);
+		} else {
+			// ago-style date
+			$post_when = qa_lang_html_sub_split('main/x_ago', qa_html(qa_time_to_string($interval)));
+		}
+
+		$this->output_split($post_when, $class . '-when');
+	}
+
 	private function _get_per_page()
 	{
 		$arr = array('page_size_qs', 'page_size_tags', 'page_size_users', 'page_size_search');
