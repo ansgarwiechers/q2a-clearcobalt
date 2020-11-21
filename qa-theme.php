@@ -215,6 +215,60 @@ class qa_html_theme extends qa_html_theme_base
 
 	function finish() {} // override indentation comment
 
+	public function post_meta($post, $class, $prefix = null, $separator = '<br/>')
+	{
+		$this->output('<span class="' . $class . '-meta">');
+
+		if (isset($prefix))
+			$this->output($prefix);
+
+		$order = explode('^', @$post['meta_order']);
+
+		foreach ($order as $element) {
+			switch ($element) {
+				case 'what':
+					$this->post_meta_what($post, $class);
+					break;
+
+				case 'when':
+					$this->post_meta_when($post, $class);
+					break;
+
+				case 'where':
+					$this->post_meta_where($post, $class);
+					break;
+
+				case 'who':
+					$this->post_meta_who($post, $class);
+					break;
+			}
+		}
+
+		$this->post_meta_flags($post, $class);
+
+		if (!empty($post['what_2'])) {
+			$this->output($separator);
+
+			foreach ($order as $element) {
+				switch ($element) {
+					case 'what':
+						$this->output('<span class="' . $class . '-what">' . $post['what_2'] . '</span>');
+						break;
+
+					case 'when':
+						$this->_format_timestamp($post['raw']['updated'], $class);
+						break;
+
+					case 'who':
+						$this->output_split(@$post['who_2'], $class . '-who');
+						break;
+				}
+			}
+		}
+
+		$this->output('</span>');
+	}
+
 	function post_meta_who($post, $class)
 	{
 		if ( isset($post['who']) )
@@ -250,14 +304,17 @@ class qa_html_theme extends qa_html_theme_base
 	}
 
 	function post_meta_when($post, $class) {
-		$post_created = $post['raw']['created'];
-		$interval     = qa_opt('db_time') - $post_created;
+		$this->_format_timestamp($post['raw']['created'], $class);
+	}
+
+	private function _format_timestamp($timestamp, $class) {
+		$interval     = qa_opt('db_time') - $timestamp;
 		$fulldatedays = qa_opt('show_full_date_days');
 
 		if ($interval < 0 || (isset($fulldatedays) && $interval > 86400 * $fulldatedays)) {
-			$gmdate = gmdate('Y-m-d H:i:s e', $post_created);
+			$gmdate = gmdate('Y-m-d H:i:s e', $timestamp);
 			$post_when = array(
-				'data' => '<time itemprop="dateCreated" datetime="' . $gmdate . '" title="' . $gmdate . '">' . gmdate('Y-m-d', $post_created) . '</time>',
+				'data' => '<time itemprop="dateCreated" datetime="' . $gmdate . '" title="' . $gmdate . '">' . gmdate('Y-m-d', $timestamp) . '</time>',
 			);
 		} else {
 			// ago-style date
