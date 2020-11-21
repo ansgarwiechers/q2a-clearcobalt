@@ -246,7 +246,7 @@ class qa_html_theme extends qa_html_theme_base
 
 		$this->post_meta_flags($post, $class);
 
-		if (!empty($post['what_2'])) {
+		if (!empty($post['what_2']) && $post['what_2'] != 'selected') {
 			$this->output($separator);
 
 			foreach ($order as $element) {
