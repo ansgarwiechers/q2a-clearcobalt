@@ -24,12 +24,12 @@
 @avatarsize:       40px;
 @bodywidth:       980px;
 @formwidth:       480px;
-@hidepadding:       5px;
 @labelwidth:      100px;
 @liststatswidth:  127px;
 @mainwidth:       750px;
 @numberwidth:      48px;
 @panelspacing:     16px;
+@postpadding:       5px; // for accepted posts and hidden posts
 @sidemargin:       19px;
 @voteboxwidth:     56px;
 @itemwidth:       @mainwidth - @voteboxwidth - @panelspacing;
@@ -614,7 +614,7 @@ h2 {
   .qa-a-item-main {
     background-color: @warnlight;
     width: ~"calc(100% - 80px)";
-    padding: @hidepadding;
+    padding: @postpadding;
   }
   .qa-a-list-item {
     .qa-vote-count {
@@ -1614,7 +1614,7 @@ h2 {
   & > .qa-q-view-main {
     background-color: @warnlight;
     width: ~"calc(100% - 80px)";
-    padding: @hidepadding;
+    padding: @postpadding;
   }
   .qa-voting {
     background: transparent none;
@@ -1646,7 +1646,7 @@ h2 {
   .qa-a-item-main {
     background-color: @warnlight;
     width: ~"calc(100% - 80px)";
-    padding: @hidepadding;
+    padding: @postpadding;
   }
   .qa-voting  {
     color: @basecolor !important;
@@ -1662,7 +1662,7 @@ h2 {
 
 .qa-a-item-selected {
   background-color: @successlight;
-  padding: 5px;
+  padding: @postpadding;
 }
 
 .qa-a-item-content {
@@ -1727,11 +1727,11 @@ h2 {
 
   .qa-post-content {
     background-color: @warnlight;
-    padding: @hidepadding @hidepadding 0 @hidepadding;
+    padding: @postpadding @postpadding 0 @postpadding;
   }
   .qa-c-item-footer {
     background-color: @warnlight;
-    padding: 0 @hidepadding @hidepadding @hidepadding;
+    padding: 0 @postpadding @postpadding @postpadding;
   }
   .qa-vote-count {
     color: @basecolor;
@@ -2013,8 +2013,8 @@ h2 {
 
     >.qa-a-selected {
       width: 35px !important;
-      margin-left: 5px !important;
-      margin-right: 5px !important;
+      margin-left: @postpadding !important;
+      margin-right: @postpadding !important;
     }
   }
 
