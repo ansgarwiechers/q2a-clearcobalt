@@ -101,6 +101,20 @@ class qa_html_theme extends qa_html_theme_base
 		);
 	}
 
+	public function a_selection($post) {
+		$this->output('<div class="qa-a-selection">');
+
+		if (isset($post['select_tags'])) {
+			$this->post_hover_button($post, 'select_tags', '', 'qa-a-select');
+		} elseif (isset($post['unselect_tags'])) {
+			$this->post_hover_button($post, 'unselect_tags', '', 'qa-a-unselect');
+		} elseif ($post['selected']) {
+			$this->output('<div class="qa-a-selected">&nbsp;</div>');
+		}
+
+		$this->output('</div>');
+	}
+
 	function voting($post)
 	{
 		if (isset($post['vote_view'])) {

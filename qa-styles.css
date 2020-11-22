@@ -462,8 +462,9 @@ h2 {
 }
 .qa-main-hidden .qa-a-item-main {
   background-color: #ffeeee;
-  width: calc(100% - 80px);
+  width: calc(100% - 79px);
   padding: 5px;
+  margin-right: 3px;
 }
 .qa-main-hidden .qa-a-list-item .qa-vote-count {
   color: #c0c0c0;
@@ -1100,6 +1101,10 @@ h2 {
   border: 0;
   padding-top: 4px;
 }
+.qa-q-view-stats {
+  box-sizing: border-box;
+  width: 43px !important;
+}
 .qa-q-view-stats .qa-vote-second-button,
 .qa-q-view-stats .qa-voted-down-button,
 .qa-q-view-stats .qa-voted-down-hover {
@@ -1402,21 +1407,17 @@ h2 {
 }
 .qa-a-list-item-hidden .qa-a-item-main {
   background-color: #ffeeee;
-  width: calc(100% - 80px);
+  width: calc(100% - 79px);
   padding: 5px;
+  margin-right: 3px;
 }
 .qa-a-list-item-hidden .qa-voting {
   color: #c0c0c0 !important;
 }
 .qa-a-item-main {
-  float: left;
-  width: 678px;
-  margin-left: 10px;
+  float: right;
+  width: 684px;
   display: inline-block;
-}
-.qa-a-item-selected {
-  background-color: #eeffee;
-  padding: 5px;
 }
 .qa-a-item-content {
   margin-bottom: 12px;
@@ -1440,7 +1441,7 @@ h2 {
 .qa-a-item-buttons {
   text-align: right;
   margin-top: 12px;
-  clear: both;
+  margin-right: 5px;
 }
 .qa-a-item-c-list {
   clear: both;
@@ -1448,13 +1449,21 @@ h2 {
   border-top: 1px dotted #606060;
 }
 /* Answer selection */
+.qa-a-item-selected {
+  background-color: #eeffee;
+  padding: 5px;
+}
+.qa-a-item-selected > .qa-a-selection {
+  margin: 100px 0 0 -63px;
+}
 .qa-a-selection {
-  float: right;
-  width: 48px;
+  box-sizing: border-box;
+  float: left;
+  clear: both;
   text-align: center;
-  padding: 0 0 5px 3px;
-  margin: 0 0 5px 5px;
-  background-color: inherit;
+  padding: 0;
+  margin: 105px 0 0 -58px;
+  background-color: transparent;
 }
 .qa-a-select-button,
 .qa-a-select-hover,
@@ -1464,8 +1473,6 @@ h2 {
   width: 36px;
   height: 25px;
   background: url("q2a-buttons.png") -78px 0 no-repeat;
-  margin-left: 5px;
-  margin-right: 5px;
   cursor: pointer;
 }
 .qa-a-select-button,
@@ -1704,7 +1711,10 @@ h2 {
   }
   .qa-q-view-main,
   .qa-a-item-main {
-    width: calc(100% - 50px) !important;
+    width: calc(100% - 43px) !important;
+  }
+  .qa-a-list-item > form:first-child .qa-voting {
+    width: 43px !important;
   }
   .qa-q-view-hidden .qa-q-view-main {
     width: calc(100% - 55px) !important;
@@ -1725,19 +1735,20 @@ h2 {
   .qa-q-view-meta,
   .qa-a-item-meta {
     float: right;
-    width: calc(100% - 50px) !important;
     line-height: 1;
     display: inline-block !important;
     margin: 0 !important;
     padding: 0 !important;
   }
   div.qa-a-selection {
-    width: 50px !important;
+    margin-left: -41px !important;
   }
-  div.qa-a-selection > .qa-a-selected {
-    width: 35px !important;
-    margin-left: 5px !important;
-    margin-right: 5px !important;
+  div.qa-a-item-selected > .qa-a-selection {
+    margin-left: -46px !important;
+  }
+  .qa-a-item-buttons {
+    text-align: right;
+    margin-top: 12px;
   }
   .qa-q-view-stats .qa-view-count {
     display: none;
@@ -1751,9 +1762,6 @@ h2 {
   }
   .qa-form-light-button {
     margin: 0;
-  }
-  .qa-voting {
-    padding-right: 10px;
   }
   .qa-part-a-list {
     margin-top: 10px;
