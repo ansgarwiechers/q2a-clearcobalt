@@ -318,7 +318,11 @@ class qa_html_theme extends qa_html_theme_base
 	}
 
 	function post_meta_when($post, $class) {
-		$this->_format_timestamp($post['raw']['created'], $class);
+		if (array_key_exists('otime', $post['raw']) and $post['raw']['_type'] !== 'Q') {
+			$this->_format_timestamp($post['raw']['otime'], $class);
+		} else {
+			$this->_format_timestamp($post['raw']['created'], $class);
+		}
 	}
 
 	private function _format_timestamp($timestamp, $class) {
