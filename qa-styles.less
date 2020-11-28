@@ -1761,11 +1761,26 @@ h2 {
 .qa-c-item-content {
   display: block;
   margin-bottom: 2px;
+
+  >div[itemprop="text"] {
+    display: inline;
+  }
+
+  >a {
+    &, &:link, &:active, &:visited, &:hover {
+      color: @metatextcolor;
+      text-decoration: none;
+    }
+  }
+}
+
+.qa-c-item-avatar-meta,
+.qa-c-item-edited {
+  color: @metatextcolor;
 }
 
 .qa-c-item-footer {
   position: relative;
-  height: 1%; // for IE6
 }
 
 // hide avatar and rep in comments
@@ -1780,9 +1795,11 @@ h2 {
 
 .qa-c-item-buttons {
   display: block;
-  position: absolute;
-  bottom: 6px;
-  right: 0;
+  float: right;
+
+  >input {
+    border: none;
+  }
 }
 
 .qa-c-item-who-pad {
@@ -2099,6 +2116,12 @@ h2 {
           width: unset !important;
         }
       }
+    }
+  }
+
+  .qa-c-item-buttons {
+    >input {
+      padding-left: 5px;
     }
   }
 

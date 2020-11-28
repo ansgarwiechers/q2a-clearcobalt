@@ -227,6 +227,41 @@ class qa_html_theme extends qa_html_theme_base
 		$this->output_split(@$post['answers'], 'qa-a-count', 'SPAN', 'SPAN', $extraclass);
 	}
 
+	public function c_item_main($c_item) {
+		if (isset($c_item['main_form_tags'])) {
+			$this->output('<form ' . $c_item['main_form_tags'] . '>'); // form for buttons on comment
+		}
+
+		$this->error(@$c_item['error']);
+
+		$this->c_item_content($c_item);
+		$this->output('<div class="qa-c-item-footer">');
+		$this->c_item_buttons($c_item);
+		$this->output('</div>');
+
+		if (isset($c_item['main_form_tags'])) {
+			$this->form_hidden_elements(@$c_item['buttons_form_hidden']);
+			$this->output('</form>');
+		}
+	}
+
+	public function c_item_content($c_item) {
+		if (!isset($c_item['content'])) {
+			$c_item['content'] = '';
+		}
+
+		$raw_data    = $c_item['raw'];
+		$c_timestamp = empty($raw_data['updated']) ? $raw_data['created'] : $raw_data['updated'];
+
+		$this->output('<div class="qa-c-item-content qa-post-content">');
+		$this->output($c_item['content']);
+		$this->output('&ndash; <span class="qa-c-item-avatar-meta">' . $c_item['who']['data'] . '</span>');
+		$this->output('<a href="#' . $raw_data['postid'] . '">');
+		$this->_format_timestamp($c_timestamp, 'qa-c-item');
+		$this->output('</a>' . (empty($raw_data['updated']) ? '' : '<span class="qa-c-item-edited">&#9997;</span>'));
+		$this->output('</div>');
+	}
+
 	function finish() {} // override indentation comment
 
 	public function post_meta($post, $class, $prefix = null, $separator = '<br/>')
