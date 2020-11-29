@@ -1390,6 +1390,9 @@ h2 {
   color: #c0c0c0;
 }
 /* Answer view */
+.qa-a-list {
+  width: 745px;
+}
 .qa-a-list-item {
   margin-bottom: 40px;
   zoom: 1;
@@ -1416,7 +1419,7 @@ h2 {
 }
 .qa-a-item-main {
   float: right;
-  width: 684px;
+  width: 679px;
   display: inline-block;
 }
 .qa-a-item-content {
@@ -1441,7 +1444,6 @@ h2 {
 .qa-a-item-buttons {
   text-align: right;
   margin-top: 12px;
-  margin-right: 5px;
 }
 .qa-a-item-c-list {
   clear: both;
