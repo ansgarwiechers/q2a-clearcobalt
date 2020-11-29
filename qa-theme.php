@@ -250,15 +250,15 @@ class qa_html_theme extends qa_html_theme_base
 			$c_item['content'] = '';
 		}
 
-		$raw_data    = $c_item['raw'];
-		$c_timestamp = empty($raw_data['updated']) ? $raw_data['created'] : $raw_data['updated'];
+		$is_updated  = !empty($c_item['raw']['updated']);
+		$c_timestamp = $is_updated ? $c_item['raw']['updated'] : $c_item['raw']['created'];
 
 		$this->output('<div class="qa-c-item-content qa-post-content">');
 		$this->output($c_item['content']);
 		$this->output('&ndash; <span class="qa-c-item-avatar-meta">' . $c_item['who']['data'] . '</span>');
-		$this->output('<a href="#' . $raw_data['postid'] . '">');
+		$this->output('<a href="#' . $c_item['raw']['postid'] . '">');
 		$this->_format_timestamp($c_timestamp, 'qa-c-item');
-		$this->output('</a>' . (empty($raw_data['updated']) ? '' : '<span class="qa-c-item-edited">&#9997;</span>'));
+		$this->output('</a>' . ($is_updated ? '<span class="qa-cc-c-item-edited">&#9997;</span>' : ''));
 		$this->output('</div>');
 	}
 
