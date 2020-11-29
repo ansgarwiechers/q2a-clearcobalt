@@ -898,7 +898,7 @@ h2 {
 .qa-form-light-hover {
   background: none;
   cursor: pointer;
-  margin-right: 6px;
+  margin-left: 5px;
   font-size: 0.85em;
   border: 1px solid #ffffff;
   overflow: visible;
@@ -1155,7 +1155,7 @@ h2 {
 .qa-c-list-item > form:nth-child(2) .qa-c-item-footer .qa-c-item-buttons {
   float: right;
   width: unset;
-  bottom: 0;
+  padding-right: 1px;
 }
 .qa-c-list-item .qa-voting {
   width: 50px;
