@@ -82,7 +82,7 @@
   border: 0;
   background-color: #f9f9f9;
 }
-.wmd-preview span.highlight {
+.wmd-preview span.qa-cc-highlight {
   background-color: #ffff00;
 }
 .wmd-preview img,
@@ -324,7 +324,7 @@ hr {
 .qa-post-content blockquote p {
   margin: 0;
 }
-.qa-post-content span.highlight {
+.qa-post-content span.qa-cc-highlight {
   background-color: #ffff00;
 }
 .qa-notice {
