@@ -918,16 +918,18 @@ h2 {
   font-size: 0.9em;
 }
 /* Question list */
-.qa-q-list .qa-view-count {
-  margin-right: 15px;
-}
 .qa-q-list-item {
   margin-bottom: 24px;
   zoom: 1;
 }
+.qa-q-list-item > .qa-q-item-stats > .qa-voting,
+.qa-q-list-item > .qa-q-item-stats > .qa-a-count,
+.qa-q-list-item > .qa-q-item-stats > .qa-view-count {
+  width: 58px;
+}
 .qa-q-item-main {
   float: left;
-  width: 607px;
+  width: 554px;
 }
 .qa-q-item-title {
   font-weight: bold;
@@ -991,8 +993,6 @@ h2 {
 .qa-voting,
 .qa-a-count {
   float: left;
-  width: 56px;
-  padding-bottom: 5px;
   text-align: center;
 }
 .qa-voting {
@@ -1218,34 +1218,29 @@ h2 {
   font-weight: normal;
 }
 /* Answer count */
-.qa-a-count {
-  margin: 0 12px 2px 0;
-}
 .qa-a-count.qa-a-count-selected {
   color: #009900;
 }
-.qa-a-count-data {
+.qa-a-count-data,
+.qa-view-count-data {
   display: block;
   font-size: 1.7em;
   font-weight: bold;
   line-height: 1;
 }
-.qa-a-count-pad {
+.qa-a-count-pad,
+.qa-view-count-pad {
   display: block;
 }
 .qa-q-item-stats {
   float: left;
-  width: 127px;
+  width: 180px;
   padding-top: 2px;
 }
 .qa-view-count {
   display: block;
-  clear: both;
-  color: #909090;
+  float: left;
   text-align: center;
-}
-.qa-view-count-data {
-  font-weight: bold;
 }
 /* Tags, users and categories */
 .qa-top-tags-table,
