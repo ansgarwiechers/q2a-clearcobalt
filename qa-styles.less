@@ -1329,6 +1329,7 @@ h2 {
 
 .qa-q-view {
   .qa-voting {
+    width: @voteboxwidth;
     background-color: transparent;
     border: 0;
     padding-top: 4px;
@@ -1338,6 +1339,16 @@ h2 {
 .qa-q-view-stats {
   box-sizing: border-box;
   width: @poststatswidth !important;
+
+  .qa-view-count {
+    padding-left: 7px;
+    color: @basecolor;
+  }
+
+  .qa-view-count-data, .qa-view-count-pad {
+    font-size: 1em;
+    display: inline;
+  }
 
   .qa-vote-second-button, .qa-voted-down-button, .qa-voted-down-hover {
     margin: -6px auto 0;
@@ -1629,6 +1640,7 @@ h2 {
   zoom: 1; // for IE
 
   & > form > div > .qa-voting {
+    width: @voteboxwidth;
     background: transparent;
     border: 0;
     height: auto;

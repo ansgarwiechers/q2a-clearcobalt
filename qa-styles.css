@@ -1098,6 +1098,7 @@ h2 {
   display: none;
 }
 .qa-q-view .qa-voting {
+  width: 56px;
   background-color: transparent;
   border: 0;
   padding-top: 4px;
@@ -1105,6 +1106,15 @@ h2 {
 .qa-q-view-stats {
   box-sizing: border-box;
   width: 43px !important;
+}
+.qa-q-view-stats .qa-view-count {
+  padding-left: 7px;
+  color: #c0c0c0;
+}
+.qa-q-view-stats .qa-view-count-data,
+.qa-q-view-stats .qa-view-count-pad {
+  font-size: 1em;
+  display: inline;
 }
 .qa-q-view-stats .qa-vote-second-button,
 .qa-q-view-stats .qa-voted-down-button,
@@ -1394,6 +1404,7 @@ h2 {
   zoom: 1;
 }
 .qa-a-list-item > form > div > .qa-voting {
+  width: 56px;
   background: transparent;
   border: 0;
   height: auto;
