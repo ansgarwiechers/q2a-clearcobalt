@@ -1108,12 +1108,15 @@ h2 {
   width: 43px !important;
 }
 .qa-q-view-stats .qa-view-count {
-  padding-left: 7px;
+  width: 100%;
+  margin-top: 7px;
+  line-height: 1;
   color: #c0c0c0;
 }
 .qa-q-view-stats .qa-view-count-data,
 .qa-q-view-stats .qa-view-count-pad {
-  font-size: 1em;
+  font-size: 0.9em;
+  font-weight: normal;
   display: inline;
 }
 .qa-q-view-stats .qa-vote-second-button,
