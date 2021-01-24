@@ -989,6 +989,9 @@ h2 {
   text-align: left;
   clear: both;
 }
+.qa-view-count {
+  color: #909090;
+}
 /* Votes */
 .qa-voting,
 .qa-a-count {
@@ -1111,7 +1114,6 @@ h2 {
   width: 100%;
   margin-top: 7px;
   line-height: 1;
-  color: #c0c0c0;
 }
 .qa-q-view-stats .qa-view-count-data,
 .qa-q-view-stats .qa-view-count-pad {

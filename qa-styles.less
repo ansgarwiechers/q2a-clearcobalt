@@ -33,8 +33,8 @@
 @sidemargin:       19px;
 @voteboxwidth:     56px;
 @itemwidth:       @mainwidth - @voteboxwidth - @panelspacing;
-@liststatswidth:  (3*@voteboxwidth) + 12px;
 @listitemwidth:   @mainwidth - @liststatswidth - @panelspacing;
+@liststatswidth:  (3*@voteboxwidth) + 12px;
 @sidepanelwidth:  @bodywidth - (2*@sidemargin) - @mainwidth - @panelspacing;
 @widgetfullwidth: @bodywidth - (2*@sidemargin);
 
@@ -1206,6 +1206,10 @@ h2 {
   clear: both;
 }
 
+.qa-view-count {
+  color: @textshaded;
+}
+
 /* Votes */
 
 // qa-*-hover classes are substituted by JS (for IE), qa-*-button:hover is a backup for other browsers if JS is off
@@ -1344,7 +1348,6 @@ h2 {
     width: 100%;
     margin-top: 7px;
     line-height: 1;
-    color: @basecolor;
   }
 
   .qa-view-count-data, .qa-view-count-pad {
