@@ -264,9 +264,25 @@ class qa_html_theme extends qa_html_theme_base
 
 	function finish() {} // override indentation comment
 
-	public function post_meta($post, $class, $prefix = null, $separator = '<br/>')
-	{
-		$this->output('<span class="' . $class . '-meta">');
+	public function avatar($item, $class, $prefix = null) {
+		if (isset($item['avatar'])) {
+			if (isset($prefix))
+				$this->output($prefix);
+
+			$this->output('<div class="' . $class . '-avatar">', $item['avatar'], '</div>');
+		}
+	}
+
+	public function post_avatar_meta($post, $class, $avatarprefix = null, $metaprefix = null, $metaseparator = '<br/>') {
+		$this->post_meta($post, $class, $metaprefix, $metaseparator);
+		$this->output('<div class="' . $class . '-avatar-meta qa-cc-avatar-meta">');
+		$this->avatar($post, $class, $avatarprefix);
+		$this->post_meta_who($post, $class);
+		$this->output('</div>');
+	}
+
+	public function post_meta($post, $class, $prefix = null, $separator = '<br/>') {
+		$this->output('<div class="' . $class . '-meta">');
 
 		if (isset($prefix))
 			$this->output($prefix);
@@ -278,17 +294,16 @@ class qa_html_theme extends qa_html_theme_base
 				case 'what':
 					$this->post_meta_what($post, $class);
 					break;
-
 				case 'when':
 					$this->post_meta_when($post, $class);
 					break;
-
 				case 'where':
 					$this->post_meta_where($post, $class);
 					break;
-
 				case 'who':
-					$this->post_meta_who($post, $class);
+					if ($class === 'qa-q-item') {
+						$this->post_meta_who($post, $class);
+					}
 					break;
 			}
 		}
@@ -303,52 +318,48 @@ class qa_html_theme extends qa_html_theme_base
 					case 'what':
 						$this->output('<span class="' . $class . '-what">' . $post['what_2'] . '</span>');
 						break;
-
 					case 'when':
 						$this->_format_timestamp($post['raw']['updated'], $class);
-						break;
-
-					case 'who':
-						$this->output_split(@$post['who_2'], $class . '-who');
 						break;
 				}
 			}
 		}
 
-		$this->output('</span>');
+		$this->output('</div>');
 	}
 
-	function post_meta_who($post, $class)
-	{
-		if ( isset($post['who']) )
-		{
-			$this->output('<SPAN CLASS="'.$class.'-who">');
+	function post_meta_who($post, $class) {
+		if (isset($post['who'])) {
+			$this->output('<div class="' . $class . '-who">');
 
 			if (strlen(@$post['who']['prefix']))
-				$this->output('<SPAN CLASS="'.$class.'-who-pad">'.$post['who']['prefix'].'</SPAN>');
+				$this->output('<span class="' . $class . '-who-pad">' . $post['who']['prefix'] . '</span>');
 
 			if (isset($post['who']['data']))
-				$this->output('<SPAN CLASS="'.$class.'-who-data">'.$post['who']['data'].'</SPAN>');
+				$this->output('<span class="' . $class . '-who-data">' . $post['who']['data'] . '</span>');
 
 			if (isset($post['who']['title']))
-				$this->output('<SPAN CLASS="'.$class.'-who-title">'.$post['who']['title'].'</SPAN>');
+				$this->output('<span class="' . $class . '-who-title">' . $post['who']['title'] . '</span>');
 
 			// You can also use $post['level'] to get the author's privilege level (as a string)
 
-			if ( isset($post['who']['points']) && $post['raw']['type'] != 'C' )
-			{
-				$post['who']['points']['prefix']='('.$post['who']['points']['prefix'];
-				$post['who']['points']['suffix']=')'; // remove 'points' text
+			if (isset($post['who']['points']) && $post['raw']['type'] != 'C') {
+				$post['who']['points']['prefix'] = '('.$post['who']['points']['prefix'];
+				$post['who']['points']['suffix'] = ')'; // remove 'points' text
 
 				// show zero for all negative points
 				$post['who']['points']['data'] = max($post['who']['points']['data'],0);
-				$this->output_split($post['who']['points'], $class.'-who-points');
+				$this->output_split($post['who']['points'], $class . '-who-points');
 			}
 
-			if (strlen(@$post['who']['suffix']))
-				$this->output('<SPAN CLASS="'.$class.'-who-pad">'.$post['who']['suffix'].'</SPAN>');
+			if (strlen(@$post['who']['suffix'])) {
+				if ($class === 'qa-q-view' || $class === 'qa-a-item') {
+					$this->output('<br/>');
+				}
+				$this->output('<span class="' . $class . '-who-pad">' . $post['who']['suffix'] . '</span>');
+			}
 
-			$this->output('</SPAN>');
+			$this->output('</div>');
 		}
 	}
 

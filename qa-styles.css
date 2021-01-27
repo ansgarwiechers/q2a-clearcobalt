@@ -200,6 +200,18 @@ code {
   font-weight: bold;
 }
 /* Edit History styles */
+.qa-q-list .qa-q-item-revised {
+  display: none;
+}
+.edh-disabled {
+  color: #c0c0c0;
+}
+.qa-q-view-revised,
+.qa-a-item-revised {
+  display: inline-block;
+  width: 100px;
+  font-size: 0.85em;
+}
 ins {
   background-color: #eeffee;
   color: #009900;
@@ -922,6 +934,9 @@ h2 {
   margin-bottom: 24px;
   zoom: 1;
 }
+.qa-q-list-item .qa-q-item-who {
+  display: inline;
+}
 .qa-q-list-item > .qa-q-item-stats > .qa-voting,
 .qa-q-list-item > .qa-q-item-stats > .qa-a-count,
 .qa-q-list-item > .qa-q-item-stats > .qa-view-count {
@@ -955,10 +970,10 @@ h2 {
 }
 .qa-q-item-meta {
   display: inline-block;
-  vertical-align: middle;
   font-size: 0.85em;
   line-height: 1.4em;
   color: #606060;
+  vertical-align: middle;
 }
 .qa-q-item-flags,
 .qa-q-view-flags,
@@ -1330,12 +1345,28 @@ h2 {
   float: left;
   width: 678px;
   margin-left: 10px;
+  margin-bottom: 15px;
+}
+.qa-q-view-main .qa-q-view-who > .qa-q-view-who-pad:first-child {
+  display: none;
+}
+.qa-q-view-main .qa-q-view-who > .qa-q-view-who-data {
+  padding-left: 2px;
 }
 .qa-q-view-main .qa-view-count {
   display: none;
 }
 .qa-q-view-content {
   margin-bottom: 16px;
+}
+.qa-cc-avatar-meta {
+  display: inline-block;
+  width: 200px;
+  padding: 4px;
+  background-color: #f6f6f6;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #e0e0e0;
 }
 .qa-q-view-avatar {
   display: inline-block;
@@ -1346,12 +1377,18 @@ h2 {
   height: 40px;
   width: 40px;
 }
-.qa-q-view-meta {
+.qa-q-view-who {
   display: inline-block;
   vertical-align: middle;
+  line-height: 1.1;
+}
+.qa-q-view-meta {
+  display: inline-block;
   font-size: 0.85em;
   line-height: 1.4em;
   color: #606060;
+  width: calc(100% - 210px - 3px);
+  vertical-align: top;
 }
 .qa-q-view-follows {
   margin-bottom: 12px;
@@ -1383,8 +1420,9 @@ h2 {
   display: inline;
 }
 .qa-q-view-buttons {
+  display: inline-block;
+  width: calc(100% - 100px - 3px);
   text-align: right;
-  clear: both;
 }
 .qa-q-view-c-list {
   clear: both;
@@ -1405,8 +1443,14 @@ h2 {
   width: 745px;
 }
 .qa-a-list-item {
-  margin-bottom: 40px;
+  margin-bottom: 25px;
   zoom: 1;
+}
+.qa-a-list-item .qa-a-item-who > .qa-a-item-who-pad:first-child {
+  display: none;
+}
+.qa-a-list-item .qa-a-item-who > .qa-a-item-who-data {
+  padding-left: 2px;
 }
 .qa-a-list-item > form > div > .qa-voting {
   width: 56px;
@@ -1435,7 +1479,7 @@ h2 {
   display: inline-block;
 }
 .qa-a-item-content {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 .qa-a-item-avatar {
   display: inline-block;
@@ -1446,14 +1490,22 @@ h2 {
   height: 40px;
   width: 40px;
 }
-.qa-a-item-meta {
+.qa-a-item-who {
   display: inline-block;
   vertical-align: middle;
+  line-height: 1.1;
+}
+.qa-a-item-meta {
+  display: inline-block;
   font-size: 0.85em;
   line-height: 1.4em;
   color: #606060;
+  width: calc(100% - 210px - 3px);
+  vertical-align: top;
 }
 .qa-a-item-buttons {
+  display: inline-block;
+  width: calc(100% - 100px - 3px);
   text-align: right;
 }
 .qa-a-item-c-list {
@@ -1552,10 +1604,10 @@ h2 {
 }
 .qa-c-item-meta {
   display: inline-block;
-  vertical-align: middle;
   font-size: 0.85em;
   line-height: 1.4em;
   color: #606060;
+  vertical-align: middle;
 }
 .qa-c-item-buttons {
   display: block;
@@ -1627,7 +1679,7 @@ h2 {
   text-decoration: none;
 }
 .qa-avatar-image {
-  margin-right: 5px;
+  margin-right: 2px;
   vertical-align: middle;
 }
 .qa-avatar-link,
@@ -1656,6 +1708,14 @@ h2 {
   .wmd-button {
     position: relative;
     left: auto !important;
+  }
+  .qa-cc-avatar-meta {
+    display: block;
+    width: 200px !important;
+    margin-top: 5px;
+  }
+  .qa-cc-avatar-meta > * {
+    width: auto !important;
   }
   .qa-header {
     padding-left: 0;
@@ -1751,22 +1811,9 @@ h2 {
   .qa-a-list-item-hidden .qa-a-item-main {
     width: calc(100% - 55px) !important;
   }
-  .qa-q-view-avatar-meta,
-  .qa-a-item-avatar-meta {
-    position: relative !important;
-    display: inline-block !important;
-  }
   .qa-q-view-avatar-meta > span,
   .qa-a-item-avatar-meta > span {
     vertical-align: middle !important;
-  }
-  .qa-q-view-meta,
-  .qa-a-item-meta {
-    float: right;
-    line-height: 1;
-    display: inline-block !important;
-    margin: 0 !important;
-    padding: 0 !important;
   }
   div.qa-a-selection {
     margin-left: -41px !important;
@@ -1776,7 +1823,7 @@ h2 {
   }
   .qa-a-item-buttons {
     text-align: right;
-    margin-top: 12px;
+    margin-top: 5px;
   }
   .qa-q-view-stats .qa-view-count {
     display: none;
@@ -1801,6 +1848,7 @@ h2 {
     margin: 0;
     padding: 0;
   }
+  .qa-a-item-c-list,
   .qa-q-view-c-list {
     margin-top: 5px;
   }

@@ -30,13 +30,18 @@
 @panelspacing:     16px;
 @postpadding:       5px; // for accepted posts and hidden posts
 @poststatswidth:   43px;
+@revisionbuttons: 100px;
 @sidemargin:       19px;
+@userboxpad:        4px;
+@userboxwidth:    200px;
+@userboxborder:     1px;
 @voteboxwidth:     56px;
-@itemwidth:       @mainwidth - @voteboxwidth - @panelspacing;
-@listitemwidth:   @mainwidth - @liststatswidth - @panelspacing;
-@liststatswidth:  (3*@voteboxwidth) + 12px;
-@sidepanelwidth:  @bodywidth - (2*@sidemargin) - @mainwidth - @panelspacing;
-@widgetfullwidth: @bodywidth - (2*@sidemargin);
+@itemwidth:         @mainwidth - @voteboxwidth - @panelspacing;
+@listitemwidth:     @mainwidth - @liststatswidth - @panelspacing;
+@liststatswidth:    (3*@voteboxwidth) + 12px;
+@sidepanelwidth:    @bodywidth - (2*@sidemargin) - @mainwidth - @panelspacing;
+@widgetfullwidth:   @bodywidth - (2*@sidemargin);
+@userboxouterwidth: @userboxwidth + 2*(@userboxpad + @userboxborder);
 
 // colors
 @basecolor:        #c0c0c0;
@@ -49,6 +54,7 @@
 @tagtextcolor:     #808080;
 @textcolor:        #000000;
 @textcolorinverse: #ffffff;
+@userboxcolor:     #f6f6f6;
 @warndark:         #cc0000;
 @warnlight:        #ffeeee;
 @textshaded:       @basecolor - @color_offset;
@@ -158,7 +164,6 @@
 
 .metainfo() {
   display: inline-block;
-  vertical-align: middle;
   font-size: 0.85em;
   line-height: 1.4em;
   color: @metatextcolor;
@@ -334,6 +339,20 @@ code {
 
 // note: Remove revisions.css from the edit-history plugin directory, otherwise
 //       the plugin default styles will take precedence over these styles.
+
+.qa-q-list .qa-q-item-revised {
+  display: none;
+}
+
+.edh-disabled {
+  color: @basecolor;
+}
+
+.qa-q-view-revised, .qa-a-item-revised {
+  display: inline-block;
+  width: @revisionbuttons;
+  font-size: 0.85em;
+}
 
 ins {
   background-color: @successlight;
@@ -1074,6 +1093,7 @@ h2 {
   border-right-style: dashed;
   text-align: right;
 }
+
 .qa-form-wide-text, .qa-form-wide-number {
   padding: 3px;
   border: @bordernormal;
@@ -1139,6 +1159,10 @@ h2 {
   margin-bottom: 24px;
   zoom: 1; // for IE
 
+  .qa-q-item-who {
+    display: inline;
+  }
+
   >.qa-q-item-stats {
     >.qa-voting, >.qa-a-count, >.qa-view-count {
       width: @voteboxwidth + 2px;
@@ -1172,6 +1196,7 @@ h2 {
 
 .qa-q-item-meta {
   .metainfo();
+  vertical-align: middle;
 }
 
 .qa-q-item-flags, .qa-q-view-flags, .qa-a-item-flags, .qa-c-item-flags {
@@ -1562,6 +1587,16 @@ h2 {
   float: left;
   width: @itemwidth;
   margin-left: 10px;
+  margin-bottom: 15px;
+
+  .qa-q-view-who {
+    >.qa-q-view-who-pad:first-child {
+      display: none;
+    }
+    >.qa-q-view-who-data {
+      padding-left: 2px;
+    }
+  }
 
   .qa-view-count { display: none; }
 }
@@ -1570,12 +1605,30 @@ h2 {
   margin-bottom: 16px;
 }
 
+.qa-cc-avatar-meta {
+  display: inline-block;
+  width: @userboxwidth;
+  padding: @userboxpad;
+  background-color: @userboxcolor;
+  border-width: @userboxborder;
+  border-style: solid;
+  border-color: @bglight;
+}
+
 .qa-q-view-avatar {
   .avatar();
 }
 
+.qa-q-view-who {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.1;
+}
+
 .qa-q-view-meta {
   .metainfo();
+  width: ~"calc(100% - @{userboxouterwidth} - 3px)";
+  vertical-align: top;
 }
 
 .qa-q-view-follows {
@@ -1613,8 +1666,9 @@ h2 {
 }
 
 .qa-q-view-buttons {
+  display: inline-block;
+  width: ~"calc(100% - @{revisionbuttons} - 3px)";
   text-align: right;
-  clear: both;
 }
 
 .qa-q-view-c-list {
@@ -1642,8 +1696,17 @@ h2 {
 }
 
 .qa-a-list-item {
-  margin-bottom: 40px;
+  margin-bottom: 25px;
   zoom: 1; // for IE
+
+  .qa-a-item-who {
+    >.qa-a-item-who-pad:first-child {
+      display: none;
+    }
+    >.qa-a-item-who-data {
+      padding-left: 2px;
+    }
+  }
 
   & > form > div > .qa-voting {
     width: @voteboxwidth;
@@ -1675,22 +1738,33 @@ h2 {
 .qa-a-item-main {
   float: right;
   width: @itemwidth + 1px;
+  //TODO: remove?
   display: inline-block; // for IE
 }
 
 .qa-a-item-content {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .qa-a-item-avatar {
   .avatar();
 }
 
+.qa-a-item-who {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.1;
+}
+
 .qa-a-item-meta {
   .metainfo();
+  width: ~"calc(100% - @{userboxouterwidth} - 3px)";
+  vertical-align: top;
 }
 
 .qa-a-item-buttons {
+  display: inline-block;
+  width: ~"calc(100% - @{revisionbuttons} - 3px)";
   text-align: right;
 }
 
@@ -1802,6 +1876,7 @@ h2 {
 
 .qa-c-item-meta {
   .metainfo();
+  vertical-align: middle;
 }
 
 .qa-c-item-buttons {
@@ -1887,7 +1962,7 @@ h2 {
 }
 
 .qa-avatar-image {
-  margin-right: 5px;
+  margin-right: 2px;
   vertical-align: middle;
 }
 
@@ -1920,6 +1995,16 @@ h2 {
   .wmd-button {
     position: relative;
     left: auto !important;
+  }
+
+  .qa-cc-avatar-meta {
+    display: block;
+    width: @userboxwidth !important;
+    margin-top: 5px;
+
+    >* {
+      width: auto !important;
+    }
   }
 
   .qa-header {
@@ -2037,18 +2122,9 @@ h2 {
   }
 
   .qa-q-view-avatar-meta, .qa-a-item-avatar-meta {
-    position: relative !important;
-    display: inline-block !important;
     >span {
       vertical-align: middle !important;
     }
-  }
-  .qa-q-view-meta, .qa-a-item-meta {
-    float: right;
-    line-height: 1;
-    display: inline-block !important;
-    margin: 0 !important;
-    padding: 0 !important;
   }
 
   div.qa-a-selection {
@@ -2063,7 +2139,7 @@ h2 {
 
   .qa-a-item-buttons {
     text-align: right;
-    margin-top: 12px;
+    margin-top: 5px;
   }
 
   .qa-q-view-stats {
@@ -2091,7 +2167,7 @@ h2 {
     padding: 0;
   }
 
-  .qa-q-view-c-list {
+  .qa-a-item-c-list, .qa-q-view-c-list {
     margin-top: 5px;
   }
 
