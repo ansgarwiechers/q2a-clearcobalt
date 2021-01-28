@@ -321,6 +321,9 @@ class qa_html_theme extends qa_html_theme_base
 					case 'when':
 						$this->_format_timestamp($post['raw']['updated'], $class);
 						break;
+					case 'who':
+						$this->post_meta_who($post, $class);
+						break;
 				}
 			}
 		}
@@ -353,10 +356,11 @@ class qa_html_theme extends qa_html_theme_base
 			}
 
 			if (strlen(@$post['who']['suffix'])) {
+				$this->output('<span class="' . $class . '-who-pad qa-cc-who-suffix">');
 				if ($class === 'qa-q-view' || $class === 'qa-a-item') {
 					$this->output('<br/>');
 				}
-				$this->output('<span class="' . $class . '-who-pad">' . $post['who']['suffix'] . '</span>');
+				$this->output($post['who']['suffix'] . '</span>');
 			}
 
 			$this->output('</div>');

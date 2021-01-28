@@ -1197,6 +1197,10 @@ h2 {
 .qa-q-item-meta {
   .metainfo();
   vertical-align: middle;
+
+  .qa-cc-who-suffix {
+    display: none;
+  }
 }
 
 .qa-q-item-flags, .qa-q-view-flags, .qa-a-item-flags, .qa-c-item-flags {
@@ -1590,12 +1594,7 @@ h2 {
   margin-bottom: 15px;
 
   .qa-q-view-who {
-    >.qa-q-view-who-pad:first-child {
-      display: none;
-    }
-    >.qa-q-view-who-data {
-      padding-left: 2px;
-    }
+    >.qa-q-view-who-data { padding-left: 2px; }
   }
 
   .qa-view-count { display: none; }
@@ -1613,6 +1612,11 @@ h2 {
   border-width: @userboxborder;
   border-style: solid;
   border-color: @bglight;
+
+  .qa-a-item-who > .qa-a-item-who-pad:first-child,
+  .qa-q-view-who > .qa-q-view-who-pad:first-child {
+    display: none;
+  }
 }
 
 .qa-q-view-avatar {
@@ -1629,6 +1633,15 @@ h2 {
   .metainfo();
   width: ~"calc(100% - @{userboxouterwidth} - 3px)";
   vertical-align: top;
+
+  >* {
+    vertical-align: middle;
+  }
+  >.qa-q-view-who {
+    >.qa-q-view-who-points, >.qa-cc-who-suffix {
+      display: none;
+    }
+  }
 }
 
 .qa-q-view-follows {
@@ -1700,9 +1713,6 @@ h2 {
   zoom: 1; // for IE
 
   .qa-a-item-who {
-    >.qa-a-item-who-pad:first-child {
-      display: none;
-    }
     >.qa-a-item-who-data {
       padding-left: 2px;
     }
@@ -1760,6 +1770,15 @@ h2 {
   .metainfo();
   width: ~"calc(100% - @{userboxouterwidth} - 3px)";
   vertical-align: top;
+
+  >* {
+    vertical-align: middle;
+  }
+  >.qa-a-item-who {
+    >.qa-a-item-who-points, >.qa-cc-who-suffix {
+      display: none;
+    }
+  }
 }
 
 .qa-a-item-buttons {
@@ -2207,8 +2226,9 @@ h2 {
   }
 
   .qa-c-item-buttons {
+    float: left !important;
     >input {
-      padding-left: 5px;
+      padding-right: 5px;
     }
   }
 
