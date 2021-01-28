@@ -128,6 +128,7 @@
 
 @basesize:     13px;
 @counterlarge: 1.7em;
+@counterhuge:  1.9em;
 @countersmall: 0.9em;
 
 // borders
@@ -1339,6 +1340,16 @@ h2 {
 
 .qa-netvote-count-pad {
   display: block;
+}
+
+.qa-template-question {
+  .qa-netvote-count-data {
+    font-size: @counterhuge;
+    padding: 4px 0 7px 0;
+  }
+  .qa-netvote-count-pad {
+    display: none;
+  }
 }
 
 .qa-upvote-count, .qa-downvote-count {

@@ -1099,6 +1099,13 @@ h2 {
 .qa-netvote-count-pad {
   display: block;
 }
+.qa-template-question .qa-netvote-count-data {
+  font-size: 1.9em;
+  padding: 4px 0 7px 0;
+}
+.qa-template-question .qa-netvote-count-pad {
+  display: none;
+}
 .qa-upvote-count,
 .qa-downvote-count {
   width: 48px;
