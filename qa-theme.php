@@ -322,7 +322,7 @@ class qa_html_theme extends qa_html_theme_base
 						$this->_format_timestamp($post['raw']['updated'], $class);
 						break;
 					case 'who':
-						$this->post_meta_who($post, $class);
+						$this->output_split(@$post['who_2'], $class . '-who');
 						break;
 				}
 			}
