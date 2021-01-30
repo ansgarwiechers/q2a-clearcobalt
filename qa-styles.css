@@ -745,6 +745,10 @@ h2 {
   padding-left: 1em;
 }
 /* Standard form */
+#option_logo_height,
+#option_logo_width {
+  border: 1px solid #c0c0c0;
+}
 .qa-form-table-boxed {
   margin-left: 20px;
 }
