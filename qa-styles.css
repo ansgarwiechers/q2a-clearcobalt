@@ -1173,7 +1173,12 @@ h2 {
 }
 .qa-c-list-item > form div {
   display: inline-block;
+}
+.qa-c-list-item .qa-vote-buttons {
   margin: 0 !important;
+}
+.qa-c-list-item .qa-netvote-count-data {
+  padding: 3px 0 0 0;
 }
 .qa-c-list-item > form:first-child {
   float: left;
@@ -1186,9 +1191,7 @@ h2 {
 .qa-c-list-item > form:first-child .qa-vote-count {
   float: right;
   width: 40px;
-  padding-top: 4px;
   text-align: center;
-  vertical-align: middle;
 }
 .qa-c-list-item > form:nth-child(2) {
   float: right;
@@ -1888,6 +1891,9 @@ h2 {
   .qa-q-view-c-list {
     margin-top: 5px;
   }
+  .qa-c-list-item .qa-netvote-count-data {
+    padding-top: 4px;
+  }
   .qa-c-list-item > form:first-child .qa-voting {
     padding: 7px 0 0 1px !important;
   }
@@ -1915,7 +1921,6 @@ h2 {
   }
   .qa-c-list-item > form:first-child .qa-vote-count {
     width: 30px !important;
-    padding-top: 6px !important;
   }
   .qa-c-list-item > form:nth-child(2) .qa-c-item-content,
   .qa-c-list-item > form:nth-child(2) .qa-c-item-footer {

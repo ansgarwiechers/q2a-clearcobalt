@@ -1429,8 +1429,15 @@ h2 {
 
     div {
       display: inline-block;
-      margin: 0 !important;
     }
+  }
+
+  .qa-vote-buttons {
+    margin: 0 !important;
+  }
+
+  .qa-netvote-count-data {
+    padding: 3px 0 0 0;
   }
 
   >form:first-child {
@@ -1445,9 +1452,7 @@ h2 {
     .qa-vote-count {
       float: right;
       width: 40px;
-      padding-top: 4px;
       text-align: center;
-      vertical-align: middle;
     }
   }
 
@@ -2222,6 +2227,10 @@ h2 {
   }
 
   .qa-c-list-item {
+    .qa-netvote-count-data {
+      padding-top: 4px;
+    }
+
     >form:first-child {
       .qa-voting {
         padding: 7px 0 0 1px !important;
@@ -2241,7 +2250,6 @@ h2 {
       }
       .qa-vote-count {
         width: 30px !important;
-        padding-top: 6px !important;
       }
     }
 
