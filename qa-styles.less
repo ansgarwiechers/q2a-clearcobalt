@@ -25,6 +25,7 @@
 @bodywidth:       980px;
 @formwidth:       480px;
 @labelwidth:      100px;
+@mainpadding:      10px;
 @mainwidth:       750px;
 @numberwidth:      48px;
 @panelspacing:     16px;
@@ -42,6 +43,8 @@
 @sidepanelwidth:    @bodywidth - (2*@sidemargin) - @mainwidth - @panelspacing;
 @widgetfullwidth:   @bodywidth - (2*@sidemargin);
 @userboxouterwidth: @userboxwidth + 2*(@userboxpad + @userboxborder);
+
+@pre_mobile_maxwidth_correction: @poststatswidth + 2*@mainpadding + 10px;
 
 // colors
 @basecolor:        #c0c0c0;
@@ -619,7 +622,7 @@ h2 {
 .qa-main {
   display: flex;
   flex-direction: column;
-  padding-left: 20px;
+  padding-left: 2*@mainpadding;
   float: left;
   margin-bottom: 2em;
   width: @mainwidth;
@@ -2065,6 +2068,11 @@ h2 {
     margin-right: 0 !important;
   }
 
+  pre {
+    width: inherit;
+    max-width: ~"calc(100vw - @{pre_mobile_maxwidth_correction})"
+  }
+
   // head section
 
   .qa-logo {
@@ -2113,8 +2121,8 @@ h2 {
   // main section
 
   .qa-main {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: @mainpadding;
+    padding-right: @mainpadding;
   }
 
   .qa-q-item-stats {

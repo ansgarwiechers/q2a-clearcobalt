@@ -1759,6 +1759,10 @@ h2 {
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
+  pre {
+    width: inherit;
+    max-width: calc(100vw - 73px);
+  }
   .qa-logo {
     margin-bottom: 10px;
     padding-left: 10px;
