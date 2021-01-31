@@ -68,6 +68,7 @@
 @bgpagelink:  #808080;
 @bgprompt:    #f0f0f0;
 @bgshade:     #f9f9f9;
+@bgselected:  @successlight - #221122;
 @bgbackdrop:  @basecolor;
 @bgcode:      @basecolor + @color_offset;
 @bgdark:      @basecolor - @color_offset;
@@ -1169,9 +1170,16 @@ h2 {
   }
 
   >.qa-q-item-stats {
-    >.qa-voting, >.qa-a-count, >.qa-view-count {
+    >* {
+      box-sizing: border-box;
+      border: 1px solid transparent;
       width: @voteboxwidth + 2px;
     }
+  }
+
+  .qa-a-count-selected {
+    background-color: @bgselected;
+    border-color: @successdark;
   }
 }
 
@@ -2107,7 +2115,7 @@ h2 {
   .qa-q-item-stats {
     width: 100% !important;
 
-    div, span {
+    >* {
       display: inline-block;
       width: unset !important;
       font-weight: normal;
@@ -2129,6 +2137,14 @@ h2 {
       margin-right: 10px;
       padding: 0;
       font-size: 1.1em;
+    }
+    .qa-a-count-selected {
+      background-color: unset;
+      border-color: transparent;
+
+      >* {
+        font-weight: bold;
+      }
     }
   }
 

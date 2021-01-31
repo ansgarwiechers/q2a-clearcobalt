@@ -941,10 +941,14 @@ h2 {
 .qa-q-list-item .qa-q-item-who {
   display: inline;
 }
-.qa-q-list-item > .qa-q-item-stats > .qa-voting,
-.qa-q-list-item > .qa-q-item-stats > .qa-a-count,
-.qa-q-list-item > .qa-q-item-stats > .qa-view-count {
+.qa-q-list-item > .qa-q-item-stats > * {
+  box-sizing: border-box;
+  border: 1px solid transparent;
   width: 58px;
+}
+.qa-q-list-item .qa-a-count-selected {
+  background-color: #cceecc;
+  border-color: #009900;
 }
 .qa-q-item-main {
   float: left;
@@ -1796,8 +1800,7 @@ h2 {
   .qa-q-item-stats {
     width: 100% !important;
   }
-  .qa-q-item-stats div,
-  .qa-q-item-stats span {
+  .qa-q-item-stats > * {
     display: inline-block;
     width: unset !important;
     font-weight: normal;
@@ -1822,6 +1825,13 @@ h2 {
     margin-right: 10px;
     padding: 0;
     font-size: 1.1em;
+  }
+  .qa-q-item-stats .qa-a-count-selected {
+    background-color: unset;
+    border-color: transparent;
+  }
+  .qa-q-item-stats .qa-a-count-selected > * {
+    font-weight: bold;
   }
   .qa-q-view-main,
   .qa-a-item-main {
