@@ -1409,7 +1409,7 @@ h2 {
   font-size: 0.85em;
   line-height: 1.4em;
   color: #606060;
-  width: calc(100% - 210px - 3px);
+  width: calc(100% - 210px - 4px);
   vertical-align: top;
 }
 .qa-q-view-meta > * {
@@ -1450,7 +1450,7 @@ h2 {
 }
 .qa-q-view-buttons {
   display: inline-block;
-  width: calc(100% - 100px - 3px);
+  width: calc(100% - 100px - 4px);
   text-align: right;
 }
 .qa-q-view-c-list {
@@ -1526,7 +1526,7 @@ h2 {
   font-size: 0.85em;
   line-height: 1.4em;
   color: #606060;
-  width: calc(100% - 210px - 3px);
+  width: calc(100% - 210px - 4px);
   vertical-align: top;
 }
 .qa-a-item-meta > * {
@@ -1538,7 +1538,7 @@ h2 {
 }
 .qa-a-item-buttons {
   display: inline-block;
-  width: calc(100% - 100px - 3px);
+  width: calc(100% - 100px - 4px);
   text-align: right;
 }
 .qa-a-item-c-list {
