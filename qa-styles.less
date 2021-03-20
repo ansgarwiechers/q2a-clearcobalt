@@ -1550,44 +1550,26 @@ h2 {
 
 /* Tags, users and categories */
 
-.qa-top-tags-table, .qa-top-users-table {
-  float: left;
-  margin-bottom: 1em;
-  width: 100%;
+.qa-part-ranking {
+  column-count: 4;
 }
 
-.qa-top-tags-count {
-  text-align: right;
-  padding: 3px;
+.qa-ranking-item {
+  display: block;
+  margin-bottom: 15px;
 }
 
-.qa-top-tags-label {
-  padding: 3px;
-}
+.qa-top-users-item {
+  height: 20px; // set "Admin > Users > Avatar size on top users page" to this value too
 
-.qa-top-tags-spacer, .qa-top-users-spacer {
-  padding: 0 4px;
-}
-
-.qa-top-users-table {
-  border: @borderlight;
-}
-
-.qa-top-users-label, .qa-top-users-score {
-  padding: 5px 8px;
-  border: @borderlight;
-  line-height: 30px;
-}
-
-.qa-top-users-label {
-  text-align: left;
-  font-weight: bold;
+  >* {
+    vertical-align: middle;
+  }
 }
 
 .qa-top-users-score {
-  background-color: @bglight;
-  border-left-width: 0;
-  text-align: right;
+  &::before { content: '('; }
+  &::after  { content: ')'; }
 }
 
 .qa-browse-cat-list {
@@ -2281,6 +2263,10 @@ h2 {
 
   .qa-c-item-hidden {
     width: ~"calc(100% - 10px)" !important;
+  }
+
+  .qa-part-ranking {
+    column-count: 2;
   }
 
   .qa-part-custom {

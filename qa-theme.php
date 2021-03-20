@@ -65,6 +65,28 @@ class qa_html_theme extends qa_html_theme_base
 		parent::page_title_error();
 	}
 
+	public function ranking($ranking) {
+		debug_out(print_r($ranking, true));
+		$this->part_title($ranking);
+
+		if (!isset($ranking['type']))
+			$ranking['type'] = 'items';
+		$class = 'qa-top-' . $ranking['type'];
+
+		foreach ($ranking['items'] as $item) {
+			if ($item['raw']['userid'] === '1') continue; # don't show admin in top users list
+			$this->output('<span class="qa-ranking-item ' . $class . '-item">');
+			$this->ranking_item($item, $class);
+			$this->output('</span>');
+		}
+
+		$this->part_footer($ranking);
+	}
+
+	function ranking_score($item, $class) {
+		$this->output('<span class="' . $class . '-score">' . $item['score'] . '</span>');
+	}
+
 	function q_item_stats($question)
 	{
 		$this->output('<DIV CLASS="qa-q-item-stats">');
