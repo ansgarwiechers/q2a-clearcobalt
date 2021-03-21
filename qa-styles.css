@@ -1304,6 +1304,7 @@ h2 {
 .qa-top-users-item {
   height: 20px;
 }
+.qa-top-tags-item > *,
 .qa-top-users-item > * {
   vertical-align: middle;
 }

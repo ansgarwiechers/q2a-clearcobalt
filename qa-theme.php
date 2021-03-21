@@ -83,8 +83,16 @@ class qa_html_theme extends qa_html_theme_base
 		$this->part_footer($ranking);
 	}
 
+	function ranking_count($item, $class) {
+		$this->ranking_item_element(($item['count'] . '&nbsp;&#215;'), $class);
+	}
+
 	function ranking_score($item, $class) {
-		$this->output('<span class="' . $class . '-score">' . $item['score'] . '</span>');
+		$this->ranking_item_element($item['score'], $class);
+	}
+
+	private function ranking_item_element($data, $class) {
+		$this->output('<span class="' . $class . '">' . $data . '</span>');
 	}
 
 	function q_item_stats($question)
