@@ -49,6 +49,8 @@
 // colors
 @basecolor:        #c0c0c0;
 @disabled:         #e0e0e0;
+@helpbgcolor:      #0000ff;
+@helpfgcolor:      #ffffff;
 @highlightcolor:   #ffff00;
 @linkcolor:        #0000ff;
 @metatextcolor:    #606060;
@@ -549,13 +551,19 @@ hr {
 h1 {
   font-size: 2em;
   line-height: 1.2em;
-  margin: 10px 0 22px;
+  margin: 24px 0 22px; // vertically align with sidebar
 
   & > a:link, & > a:visited, & > a:hover {
     color: inherit;
   }
 }
-
+// reduce top margin for pages with a sub-navigation
+.qa-template-admin,
+.qa-template-questions,
+.qa-template-unanswered,
+.qa-template-users {
+  h1 { margin-top: 10px; }
+}
 h2 {
   font-size: 1.3em;
   clear: both;
@@ -985,6 +993,10 @@ h2 {
 
 .qa-form-tall-label {
   padding: 8px 8px 2px 8px;
+
+  .qa-form-tall-checkbox {
+    margin-top: 2px;
+  }
 }
 
 .qa-form-tall-data {
@@ -1095,6 +1107,10 @@ h2 {
   border: @borderlight;
 }
 
+.qa-form-wide-data * {
+  vertical-align: middle;
+}
+
 .qa-form-wide-label {
   white-space: nowrap;
   width: 100px;
@@ -1114,7 +1130,10 @@ h2 {
 
 .qa-form-wide-number {
   width: @numberwidth;
-  vertical-align: middle;
+
+  & + .qa-form-wide-note {
+    vertical-align: middle;
+  }
 }
 
 .qa-form-wide-error {
@@ -1126,6 +1145,15 @@ h2 {
 
 .qa-form-wide-note {
   margin-left: 4px;
+  vertical-align: top;
+
+  .qa-form-wide-help {
+    padding: 0 floor(@basesize / 2) 0 floor(@basesize / 2);
+    border-radius: @basesize;
+    color: @helpfgcolor;
+    background-color: @helpbgcolor;
+    font-weight: bold;
+  }
 }
 
 .qa-form-wide-buttons {
@@ -2020,6 +2048,12 @@ h2 {
   .qa-voting,
   .wmd-input {
     width: 100%;
+  }
+
+  // the sidebar isn't displayed in mobile view, so we don't need to align
+  // question titles with it
+  h1 {
+    margin-top: 10px;
   }
 
   .wmd-spacer {

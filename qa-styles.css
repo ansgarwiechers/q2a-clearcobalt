@@ -385,12 +385,18 @@ hr {
 h1 {
   font-size: 2em;
   line-height: 1.2em;
-  margin: 10px 0 22px;
+  margin: 24px 0 22px;
 }
 h1 > a:link,
 h1 > a:visited,
 h1 > a:hover {
   color: inherit;
+}
+.qa-template-admin h1,
+.qa-template-questions h1,
+.qa-template-unanswered h1,
+.qa-template-users h1 {
+  margin-top: 10px;
 }
 h2 {
   font-size: 1.3em;
@@ -772,6 +778,9 @@ h2 {
 .qa-form-tall-label {
   padding: 8px 8px 2px 8px;
 }
+.qa-form-tall-label .qa-form-tall-checkbox {
+  margin-top: 2px;
+}
 .qa-form-tall-data {
   padding: 0 8px 8px 8px;
   width: 480px;
@@ -873,6 +882,9 @@ h2 {
   padding: 5px 8px;
   border: 1px solid #c0c0c0;
 }
+.qa-form-wide-data * {
+  vertical-align: middle;
+}
 .qa-form-wide-label {
   white-space: nowrap;
   width: 100px;
@@ -890,6 +902,8 @@ h2 {
 }
 .qa-form-wide-number {
   width: 48px;
+}
+.qa-form-wide-number + .qa-form-wide-note {
   vertical-align: middle;
 }
 .qa-form-wide-error {
@@ -902,6 +916,14 @@ h2 {
 }
 .qa-form-wide-note {
   margin-left: 4px;
+  vertical-align: top;
+}
+.qa-form-wide-note .qa-form-wide-help {
+  padding: 0 6px 0 6px;
+  border-radius: 13px;
+  color: #ffffff;
+  background-color: #0000ff;
+  font-weight: bold;
 }
 .qa-form-wide-buttons {
   padding: 8px;
@@ -1719,6 +1741,9 @@ h2 {
   .qa-voting,
   .wmd-input {
     width: 100%;
+  }
+  h1 {
+    margin-top: 10px;
   }
   .wmd-spacer {
     display: none;
