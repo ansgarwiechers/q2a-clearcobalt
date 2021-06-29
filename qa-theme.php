@@ -66,7 +66,6 @@ class qa_html_theme extends qa_html_theme_base
 	}
 
 	public function ranking($ranking) {
-		debug_out(print_r($ranking, true));
 		$this->part_title($ranking);
 
 		if (!isset($ranking['type']))
