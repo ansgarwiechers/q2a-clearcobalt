@@ -1,7 +1,7 @@
 <?php
 /*
 	'ClearCobalt' theme for Question2Answer by Ansgar Wiechers,
-  based on the theme 'Clean Base' by Scott Vivian.
+	based on the theme 'Clean Base' by Scott Vivian.
 
 	-----------------------------------------------------------------------
 
