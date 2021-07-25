@@ -283,11 +283,17 @@ class qa_html_theme extends qa_html_theme_base
 		$c_timestamp = $is_updated ? $c_item['raw']['updated'] : $c_item['raw']['created'];
 
 		$this->output('<div class="qa-c-item-content qa-post-content">');
-		$this->output($c_item['content']);
-		$this->output('&ndash; <span class="qa-c-item-avatar-meta">' . $c_item['who']['data'] . '</span>');
-		$this->output('<a href="#' . $c_item['raw']['postid'] . '">');
-		$this->_format_timestamp($c_timestamp, 'qa-c-item');
-		$this->output('</a>' . ($is_updated ? '<span class="qa-cc-c-item-edited">&#9997;</span>' : ''));
+		if ($c_item['raw']['type'] == 'Q') {
+			# related question
+			$this->output('Related question: <a href="' . $c_item['url'] . '">' . $c_item['raw']['title'] . '</a>');
+		} else {
+			# regular comment
+			$this->output($c_item['content']);
+			$this->output('&ndash; <span class="qa-c-item-avatar-meta">' . $c_item['who']['data'] . '</span>');
+			$this->output('<a href="#' . $c_item['raw']['postid'] . '">');
+			$this->_format_timestamp($c_timestamp, 'qa-c-item');
+			$this->output('</a>' . ($is_updated ? '<span class="qa-cc-c-item-edited">&#9997;</span>' : ''));
+		}
 		$this->output('</div>');
 	}
 
