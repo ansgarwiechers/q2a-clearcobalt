@@ -861,6 +861,16 @@ h2 {
   -moz-appearance: none;
   -webkit-appearance: none;
 }
+#qa_captcha_div_1 input {
+  width: 10em;
+  vertical-align: top;
+  margin: 15px 0;
+  padding: 0;
+  border: 1px solid #c0c0c0;
+}
+#qa_captcha_div_1 img {
+  margin-left: 5px;
+}
 /* Standard form (wide version) */
 .qa-form-wide-table {
   width: 100%;
