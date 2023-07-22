@@ -1693,10 +1693,18 @@ h2 {
   font-weight: bold;
 }
 /* Private Messages */
-.qa-message-content {
+#privatemessages .qa-message-item {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #909090;
+}
+#privatemessages .qa-message-content {
   margin-bottom: 5px;
 }
-.qa-message-buttons {
+#privatemessages .qa-message-avatar {
+  display: none;
+}
+#privatemessages .qa-message-buttons {
   margin-top: 5px;
 }
 /* Footer parts */
